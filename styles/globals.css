@@ -1,0 +1,61 @@
+:root {
+  --primary-orange: #FF6A00;
+  --primary-black: #1A1A1A;
+  --primary-gold: #FFB400;
+  --light-gray: #E0E0E0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary-black) 0%, var(--primary-orange) 100%);
+}
+
+.button-primary {
+  background-color: var(--primary-orange);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-black);
+  box-shadow: 0 0 15px var(--primary-orange);
+}
+
+.button-secondary {
+  border: 2px solid var(--primary-gold);
+  color: var(--primary-gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.button-secondary:hover {
+  background-color: var(--primary-gold);
+  color: var(--primary-black);
+}
+
+.card {
+  background: rgba(26, 26, 26, 0.9);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
