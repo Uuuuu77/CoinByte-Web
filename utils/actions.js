@@ -31,6 +31,17 @@ window.handleDownloadWallet = function() {
   }
 };
 
+window.handleJoinWaitlist = function() {
+  try {
+    // Track analytics
+    trackEvent('join_waitlist_clicked');
+    window.open('https://wt.ls/waitlist', '_blank');
+  } catch (error) {
+    reportError(error);
+    showNotification('error', 'Failed to join waitlist. Please try again.');
+  }
+};
+
 window.handleNewsletterSubscribe = async function(email) {
   try {
     if (!email) {
@@ -73,7 +84,7 @@ function detectPlatform() {
 
 function isValidEmail(email) {
   try {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    return /^[^\s@]+@[^\s@]+$/.test(email);
   } catch (error) {
     reportError(error);
     return false;
