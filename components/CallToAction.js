@@ -7,6 +7,15 @@ function CallToAction() {
       reportError(error);
     }
   };
+  
+  const handleJoinWaitlist = () => {
+    try {
+      trackEvent('join_waitlist_clicked');
+      window.open('https://wt.ls/waitlist', '_blank');
+    } catch (error) {
+      reportError(error);
+    }
+  };
 
   return (
     <section data-name="cta" className="py-16 px-4">
@@ -32,6 +41,12 @@ function CallToAction() {
                 onClick={handleLearnMore}
               >
                 Learn More
+              </button>
+              <button 
+                className="button-primary text-lg"
+                onClick={handleJoinWaitlist}
+              >
+                Join Waitlist
               </button>
             </div>
           </div>
