@@ -3,8 +3,8 @@ window.handleGetStarted = function() {
   try {
     // Track analytics
     trackEvent('get_started_clicked');
-    // Open registration modal
-    openModal('registration');
+    // Redirect to waitlist link
+    window.open('https://wt.ls/waitlist', '_blank');
   } catch (error) {
     reportError(error);
     showNotification('error', 'Failed to process request. Please try again.');
@@ -15,16 +15,8 @@ window.handleDownloadWallet = function() {
   try {
     // Track analytics
     trackEvent('download_wallet_clicked');
-    
-    // Check platform and redirect to appropriate store
-    const platform = detectPlatform();
-    const storeUrls = {
-      ios: 'https://apps.apple.com/coinbyte',
-      android: 'https://play.google.com/store/coinbyte',
-      desktop: 'https://coinbyte.com/downloads'
-    };
-    
-    window.open(storeUrls[platform] || storeUrls.desktop, '_blank');
+    // Redirect to waitlist link
+    window.open('https://wt.ls/waitlist', '_blank');
   } catch (error) {
     reportError(error);
     showNotification('error', 'Failed to initiate download. Please try again.');
@@ -55,10 +47,8 @@ window.handleNewsletterSubscribe = async function(email) {
     // Track analytics
     trackEvent('newsletter_subscribe', { email });
 
-    // Simulated API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    showNotification('success', 'Thank you for subscribing to our newsletter!');
+    // Redirect to waitlist link
+    window.open('https://wt.ls/waitlist', '_blank');
     return true;
   } catch (error) {
     reportError(error);
