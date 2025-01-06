@@ -3,8 +3,8 @@ window.handleGetStarted = function() {
   try {
     // Track analytics
     trackEvent('get_started_clicked');
-    // Redirect to waitlist link
-    window.open('https://wt.ls/waitlist', '_blank');
+    // Open registration modal
+    openModal('registration');
   } catch (error) {
     reportError(error);
     showNotification('error', 'Failed to process request. Please try again.');
@@ -15,22 +15,19 @@ window.handleDownloadWallet = function() {
   try {
     // Track analytics
     trackEvent('download_wallet_clicked');
-    // Redirect to waitlist link
-    window.open('https://wt.ls/waitlist', '_blank');
+    
+    // Check platform and redirect to appropriate store
+    const platform = detectPlatform();
+    const storeUrls = {
+      ios: 'https://apps.apple.com/coinbyte',
+      android: 'https://play.google.com/store/coinbyte',
+      desktop: 'https://coinbyte.com/downloads'
+    };
+    
+    window.open(storeUrls[platform] || storeUrls.desktop, '_blank');
   } catch (error) {
     reportError(error);
     showNotification('error', 'Failed to initiate download. Please try again.');
-  }
-};
-
-window.handleJoinWaitlist = function() {
-  try {
-    // Track analytics
-    trackEvent('join_waitlist_clicked');
-    window.open('https://wt.ls/waitlist', '_blank');
-  } catch (error) {
-    reportError(error);
-    showNotification('error', 'Failed to join waitlist. Please try again.');
   }
 };
 
@@ -47,8 +44,10 @@ window.handleNewsletterSubscribe = async function(email) {
     // Track analytics
     trackEvent('newsletter_subscribe', { email });
 
-    // Redirect to waitlist link
-    window.open('https://wt.ls/waitlist', '_blank');
+    // Simulated API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    showNotification('success', 'Thank you for subscribing to our newsletter!');
     return true;
   } catch (error) {
     reportError(error);
@@ -74,7 +73,7 @@ function detectPlatform() {
 
 function isValidEmail(email) {
   try {
-    return /^[^\s@]+@[^\s@]+$/.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   } catch (error) {
     reportError(error);
     return false;
