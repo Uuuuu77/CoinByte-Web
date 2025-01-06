@@ -1,8 +1,8 @@
 function Hero() {
-  const handleJoinWaitlist = () => {
+  const handleExploreFeatures = () => {
     try {
-      trackEvent('join_waitlist_clicked');
-      window.open('https://wt.ls/waitlist', '_blank');
+      trackEvent('explore_features_clicked');
+      document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
       reportError(error);
     }
@@ -21,7 +21,7 @@ function Hero() {
           <div data-name="cta-buttons" className="flex flex-col md:flex-row gap-4 justify-center">
             <button 
               className="button-primary text-lg"
-              onClick={handleJoinWaitlist}
+              onClick={handleGetStarted}
             >
               Get Started
             </button>

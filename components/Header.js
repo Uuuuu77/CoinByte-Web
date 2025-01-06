@@ -21,7 +21,7 @@ function Header() {
             <a href="#features" className="text-white hover:text-[#FF6A00] transition-colors">Features</a>
             <a href="#how-it-works" className="text-white hover:text-[#FF6A00] transition-colors">How It Works</a>
             <a href="#prices" className="text-white hover:text-[#FF6A00] transition-colors">Prices</a>
-            <button className="button-primary" onClick={handleJoinWaitlist}>Get Started</button>
+            <button className="button-primary">Get Started</button>
           </div>
 
           <button 
@@ -41,11 +41,11 @@ function Header() {
               <a href="#features" className="text-white hover:text-[#FF6A00] transition-colors">Features</a>
               <a href="#how-it-works" className="text-white hover:text-[#FF6A00] transition-colors">How It Works</a>
               <a href="#prices" className="text-white hover:text-[#FF6A00] transition-colors">Prices</a>
-              <button className="button-primary w-full" onClick={handleJoinWaitlist}>Get Started</button>
+              <button className="button-primary w-full">Get Started</button>
             </div>
           </div>
         )}
       </div>
     </header>
-  ); 
+  );
 }

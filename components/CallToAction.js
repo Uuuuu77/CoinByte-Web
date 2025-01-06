@@ -1,8 +1,8 @@
 function CallToAction() {
-  const handleJoinWaitlist = () => {
+  const handleLearnMore = () => {
     try {
-      trackEvent('join_waitlist_clicked');
-      window.open('https://wt.ls/waitlist', '_blank');
+      trackEvent('learn_more_clicked');
+      window.open('https://docs.coinbyte.com', '_blank');
     } catch (error) {
       reportError(error);
     }
@@ -23,15 +23,15 @@ function CallToAction() {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button 
                 className="button-primary text-lg"
-                onClick={handleJoinWaitlist}
+                onClick={handleDownloadWallet}
               >
                 Download Wallet
               </button>
               <button 
-                className="button-primary text-lg"
-                onClick={handleJoinWaitlist}
+                className="button-secondary text-lg"
+                onClick={handleLearnMore}
               >
-                Join Waitlist
+                Learn More
               </button>
             </div>
           </div>
