@@ -3,14 +3,15 @@ window.handleGetStarted = function() {
   try {
     // Track analytics
     trackEvent('get_started_clicked');
-    // Open registration modal
-    openModal('registration');
+    // Redirect to waitlist
+    window.open('https://wt.ls/waitlist', '_blank');
   } catch (error) {
     reportError(error);
     showNotification('error', 'Failed to process request. Please try again.');
   }
 };
 
+// Existing code
 window.handleDownloadWallet = function() {
   try {
     // Track analytics
@@ -31,6 +32,7 @@ window.handleDownloadWallet = function() {
   }
 };
 
+// Existing code
 window.handleNewsletterSubscribe = async function(email) {
   try {
     if (!email) {
@@ -56,6 +58,7 @@ window.handleNewsletterSubscribe = async function(email) {
   }
 };
 
+// Existing code
 function detectPlatform() {
   try {
     const userAgent = navigator.userAgent.toLowerCase();
@@ -71,6 +74,7 @@ function detectPlatform() {
   }
 }
 
+// Existing code
 function isValidEmail(email) {
   try {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -80,6 +84,7 @@ function isValidEmail(email) {
   }
 }
 
+// Existing code
 window.trackEvent = function(eventName, data = {}) {
   try {
     console.log('Track event:', eventName, data);
@@ -88,6 +93,7 @@ window.trackEvent = function(eventName, data = {}) {
   }
 };
 
+// Existing code
 window.showNotification = function(type, message) {
   try {
     const notification = document.createElement('div');
@@ -105,6 +111,7 @@ window.showNotification = function(type, message) {
   }
 };
 
+// Existing code
 window.openModal = function(type) {
   try {
     const modal = document.createElement('div');

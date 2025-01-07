@@ -9,6 +9,10 @@ function Header() {
     }
   };
 
+  const handleGetStarted = () => {
+    window.open('https://wt.ls/waitlist', '_blank');
+  };
+
   return (
     <header data-name="header" className="fixed w-full top-0 z-50 bg-[#1A1A1A]/90 backdrop-blur-md">
       <div className="container mx-auto px-4 py-4">
@@ -21,7 +25,7 @@ function Header() {
             <a href="#features" className="text-white hover:text-[#FF6A00] transition-colors">Features</a>
             <a href="#how-it-works" className="text-white hover:text-[#FF6A00] transition-colors">How It Works</a>
             <a href="#prices" className="text-white hover:text-[#FF6A00] transition-colors">Prices</a>
-            <button className="button-primary">Get Started</button>
+            <button className="button-primary" onClick={handleGetStarted}>Get Started</button>
           </div>
 
           <button 
@@ -41,7 +45,7 @@ function Header() {
               <a href="#features" className="text-white hover:text-[#FF6A00] transition-colors">Features</a>
               <a href="#how-it-works" className="text-white hover:text-[#FF6A00] transition-colors">How It Works</a>
               <a href="#prices" className="text-white hover:text-[#FF6A00] transition-colors">Prices</a>
-              <button className="button-primary w-full">Get Started</button>
+              <button className="button-primary w-full" onClick={handleGetStarted}>Get Started</button>
             </div>
           </div>
         )}

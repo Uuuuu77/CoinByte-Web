@@ -2,7 +2,7 @@ function CallToAction() {
   const handleJoinWaitList = () => {
     try {
       trackEvent('join_waitlist_clicked');
-      window.open('https://https://wt.ls/waitlist', '_blank');
+      window.open('https://wt.ls/waitlist', '_blank');
     } catch (error) {
       reportError(error);
     }

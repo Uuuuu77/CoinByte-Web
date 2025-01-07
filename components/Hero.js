@@ -8,6 +8,10 @@ function Hero() {
     }
   };
 
+  const handleGetStarted = () => {
+    window.open('https://wt.ls/waitlist', '_blank');
+  };
+
   return (
     <section data-name="hero" className="pt-24 pb-16 px-4 md:pt-32 md:pb-24">
       <div className="container mx-auto text-center">
@@ -40,10 +44,11 @@ function Hero() {
             <div className="relative bg-black/50 rounded-2xl p-8 backdrop-blur-xl border border-orange-500/20">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {[
-                  { label: 'Total Volume', value: '$2.5B+' },
-                  { label: 'Active Users', value: '500K+' },
-                  { label: 'Countries', value: '50+' },
-		  { label: 'Beta Users', value: '5K+' }
+                  { label: 'Early Access Users', value: '20+' },
+		  { label: 'Prototype Transactions', value: '10+' },
+		  { label: 'Supported Cryptos', value: '5+' },
+		  { label: 'Development Hours', value: '500+' }
+
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-2xl md:text-3xl font-bold text-[#FF6A00]">{stat.value}</div>
