@@ -42,7 +42,8 @@ function Hero() {
                 {[
                   { label: 'Total Volume', value: '$2.5B+' },
                   { label: 'Active Users', value: '500K+' },
-                  { label: 'Countries', value: '150+' }
+                  { label: 'Countries', value: '50+' },
+		  { label: 'Beta Users', value: '5K+' }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-2xl md:text-3xl font-bold text-[#FF6A00]">{stat.value}</div>

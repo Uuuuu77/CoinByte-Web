@@ -19,9 +19,9 @@ window.handleDownloadWallet = function() {
     // Check platform and redirect to appropriate store
     const platform = detectPlatform();
     const storeUrls = {
-      ios: 'https://apps.apple.com/coinbyte',
-      android: 'https://play.google.com/store/coinbyte',
-      desktop: 'https://coinbyte.com/downloads'
+      ios: 'https://wt.ls/waitlist',
+      android: 'https://wt.ls/waitlist',
+      desktop: 'https://wt.ls/waitlist'
     };
     
     window.open(storeUrls[platform] || storeUrls.desktop, '_blank');

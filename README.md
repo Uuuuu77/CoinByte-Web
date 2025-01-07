@@ -1,4 +1,4 @@
-# CoinByte Website
+# CoinByte Web
 
 Welcome to the official CoinByte Website repository. CoinByte is a cutting-edge crypto payment and wallet platform designed for seamless, fast, and low-cost digital transactions. Our platform is built to facilitate cross-border payments, stablecoin management, and blockchain-powered services for the underbanked.
 
@@ -47,10 +47,10 @@ To get started with CoinByte's website development, clone this repository and fo
 
 ```bash
 # Clone the repository
-git clone https://github.com/CoinByte/website.git
+git clone https://github.com/CoinByte-Web.git
 
 # Navigate to the project directory
-cd website
+cd CoinByte-Web
 
 # Install dependencies
 npm install
@@ -82,8 +82,6 @@ CoinByte integrates with CoinGecko and other market data APIs for real-time pric
 │   ├── images
 │   └── icons
 ├── src
-│   ├── components
-│   ├── pages
 │   ├── styles
 │   └── utils
 └── README.md

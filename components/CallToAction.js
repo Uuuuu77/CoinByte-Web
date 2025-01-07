@@ -1,8 +1,8 @@
 function CallToAction() {
-  const handleLearnMore = () => {
+  const handleJoinWaitList = () => {
     try {
-      trackEvent('learn_more_clicked');
-      window.open('https://docs.coinbyte.com', '_blank');
+      trackEvent('join_waitlist_clicked');
+      window.open('https://https://wt.ls/waitlist', '_blank');
     } catch (error) {
       reportError(error);
     }
@@ -29,9 +29,9 @@ function CallToAction() {
               </button>
               <button 
                 className="button-secondary text-lg"
-                onClick={handleLearnMore}
+                onClick={handleJoinWaitList}
               >
-                Learn More
+                Join WaitList
               </button>
             </div>
           </div>
