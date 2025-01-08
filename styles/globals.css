@@ -59,3 +59,43 @@ h1, h2, h3, h4, h5, h6 {
 .card:hover {
   transform: translateY(-5px);
 }
+
+/* Add these styles to your globals.css */
+
+/* Reduce Vertical Gaps */
+footer .section {
+    margin-bottom: 10px;
+}
+
+/* Condense Padding */
+footer {
+    padding: 20px 10px;
+}
+
+footer .subscribe {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+/* Use Grid or Flexbox for Better Stacking */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Newsletter Form Width */
+.subscribe input {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Reduce Font Size on Mobile */
+footer h2, footer h3 {
+    font-size: 1rem;
+}
+
+footer p, footer a {
+    font-size: 0.875rem;
+}
