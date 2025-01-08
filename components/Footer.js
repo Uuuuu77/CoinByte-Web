@@ -20,8 +20,8 @@ function Footer() {
 
   return (
     <footer data-name="footer" className="bg-black/50 pt-16 pb-8 px-4">
-      <div className="footer-container container mx-auto">
-        <div className="section grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           {/* Brand Section */}
           <div className="md:col-span-4" data-name="footer-brand">
             <div className="mb-8">
@@ -30,20 +30,19 @@ function Footer() {
                 Revolutionizing stablecoin payments with secure, fast, and low-cost global transactions.
               </p>
               <div className="flex space-x-4">
-                <!-- Add links to modern icons here -->
-                <a href="https://x.com/_CoinByte" className="text-gray-400 hover:text-[#FF6A00] transition-colors">
+                <a href="#" className="text-gray-400 hover:text-[#FF6A00] transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <!-- SVG path for X icon -->
+                    <!-- Original SVG path for X icon -->
                   </svg>
                 </a>
-                <a href="https://github.com/Uuuuu77/CoinByte-Web" className="text-gray-400 hover:text-[#FF6A00] transition-colors">
+                <a href="#" className="text-gray-400 hover:text-[#FF6A00] transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <!-- SVG path for GitHub icon -->
+                    <!-- Original SVG path for GitHub icon -->
                   </svg>
                 </a>
-                <a href="YOUR_TELEGRAM_LINK_HERE" className="text-gray-400 hover:text-[#FF6A00] transition-colors">
+                <a href="#" className="text-gray-400 hover:text-[#FF6A00] transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <!-- SVG path for Telegram icon -->
+                    <!-- Original SVG path for Telegram icon -->
                   </svg>
                 </a>
               </div>
