@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-5px);
 }
 
-/* Updated Footer Styles */
+/* Footer Styles */
 .footer {
   background-color: var(--primary-black);
   color: var(--light-gray);
@@ -126,6 +126,24 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 15px var(--primary-orange);
 }
 
+.footer .social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.footer .social-icons a svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--light-gray);
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a svg:hover {
+  fill: var(--primary-orange);
+  transform: scale(1.1);
+}
+
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
@@ -144,7 +162,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .footer .social-icons {
     justify-content: center;
-    gap: 1rem;
   }
 
   .footer input[type="email"] {
