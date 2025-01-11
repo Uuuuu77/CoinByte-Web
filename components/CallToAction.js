@@ -18,7 +18,7 @@ function CallToAction() {
               Ready to Start Your Crypto Journey?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of users worldwide who trust CoinByte for their digital asset management
+              Join hundreds of users worldwide who trust CoinByte for their digital asset management
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button 
