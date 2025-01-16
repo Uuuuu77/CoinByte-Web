@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Set character encoding for the document -->
     <meta charset="UTF-8">
+    <!-- Ensure proper rendering and touch zooming on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description of the CoinByte platform for search engines -->
     <meta name="description" content="CoinByte - Revolutionary stablecoin payment platform offering seamless, fast, and low-cost transactions globally">
+    <!-- Keywords for SEO purposes -->
     <meta name="keywords" content="cryptocurrency, stablecoin, payments, blockchain, defi, digital wallet, crypto trading">
-    
-    <!-- Open Graph Meta Tags -->
+
+    <!-- Open Graph Meta Tags for social media sharing -->
     <meta property="og:title" content="CoinByte - Revolutionary Stablecoin Payments">
     <meta property="og:description" content="Experience seamless, fast, and low-cost transactions globally with CoinByte's innovative stablecoin payment platform">
     <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
+
+    <!-- Twitter Card Meta Tags for Twitter sharing -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CoinByte - Revolutionary Stablecoin Payments">
     <meta name="twitter:description" content="Experience seamless, fast, and low-cost transactions globally with CoinByte's innovative stablecoin payment platform">
-    
+
+    <!-- Title of the document displayed in the browser tab -->
     <title>CoinByte - Revolutionary Stablecoin Payments</title>
-    
-    <!-- Load React -->
+
+    <!-- Import React and ReactDOM libraries for building the app -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Import Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Load Heroicons -->
+
+    <!-- Import Heroicons for icons -->
     <script src="https://unpkg.com/@heroicons/react@2.0.18/24/outline/esm/index.js"></script>
-    
-    <!-- Fonts -->
+
+    <!-- Import Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
+
+    <!-- Link to global styles and animations -->
     <link href="styles/globals.css" rel="stylesheet">
     <link href="styles/animations.css" rel="stylesheet">
 </head>
 <body class="bg-[#1A1A1A] text-white">
+    <!-- Root div where the React app will be rendered -->
     <div id="root"></div>
 
-    <!-- Load Utilities First -->
+    <!-- Import utility scripts -->
     <script type="text/babel" src="utils/actions.js"></script>
     <script type="text/babel" src="utils/api.js"></script>
     <script type="text/babel" src="utils/animations.js"></script>
     <script type="text/babel" src="utils/icons.js"></script>
 
-    <!-- Load Components -->
+    <!-- Import React components for the app -->
     <script type="text/babel" src="components/Header.js"></script>
     <script type="text/babel" src="components/Hero.js"></script>
     <script type="text/babel" src="components/Features.js"></script>
@@ -52,7 +59,7 @@
     <script type="text/babel" src="components/CallToAction.js"></script>
     <script type="text/babel" src="components/Footer.js"></script>
 
-    <!-- Load Main App Last -->
+    <!-- Load the main app script -->
     <script type="text/babel" src="app.js"></script>
 </body>
 </html>
