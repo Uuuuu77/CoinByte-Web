@@ -6,6 +6,10 @@
   --dark-gray: #333333;
   --input-bg: #1E1E1E;
   --input-border: #444444;
+  --highlight-bg: rgba(255, 106, 0, 0.1); /* Highlight background for hover/active states */
+  --border-radius: 0.5rem; /* Unified border radius for buttons, cards, etc. */
+  --box-shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.2); /* Shadow on hover for interactive elements */
 }
 
 body {
@@ -21,29 +25,32 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Gradient background for the main section */
 .gradient-bg {
   background: linear-gradient(135deg, var(--primary-black) 0%, var(--primary-orange) 100%);
 }
 
+/* Button styles */
 .button-primary {
   background-color: var(--primary-orange);
   color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-light);
 }
 
 .button-primary:hover {
   background-color: var(--primary-black);
-  box-shadow: 0 0 15px var(--primary-orange);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .button-secondary {
   border: 2px solid var(--primary-gold);
   color: var(--primary-gold);
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -55,14 +62,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .card {
   background: rgba(26, 26, 26, 0.9);
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: var(--box-shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
 }
 
 /* Footer Styles */
@@ -74,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   text-align: left;
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect for footer */
 }
 
 .footer a {
@@ -100,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer input[type="email"] {
   width: 100%;
   padding: 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   background-color: var(--input-bg);
   border: 1px solid var(--input-border);
   color: var(--light-gray);
@@ -116,14 +125,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--primary-orange);
   color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
 .footer button:hover {
   background-color: var(--primary-black);
-  box-shadow: 0 0 15px var(--primary-orange);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .footer .social-icons {
@@ -186,4 +195,16 @@ h1, h2, h3, h4, h5, h6 {
     width: 20px;
     height: 20px;
   }
+}
+
+/* Adding hover effects to cards and sections for interactivity */
+.card:hover, .section-reveal:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Highlight background for active items */
+.highlight-active {
+  background-color: var(--highlight-bg);
+  transition: background-color 0.3s ease;
 }

@@ -1,15 +1,19 @@
+/* Fade-in animation for smoother content loading */
 .fade-in {
   animation: fadeIn 0.5s ease-in;
 }
 
+/* Slide-up animation for components appearing from the bottom */
 .slide-up {
   animation: slideUp 0.5s ease-out;
 }
 
+/* Bounce animation for elements that need to draw attention */
 .bounce {
   animation: bounce 1s infinite;
 }
 
+/* Keyframes for the fade-in effect */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -19,6 +23,7 @@
   }
 }
 
+/* Keyframes for the slide-up effect */
 @keyframes slideUp {
   from {
     transform: translateY(20px);
@@ -30,6 +35,7 @@
   }
 }
 
+/* Keyframes for the bounce effect */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -39,6 +45,7 @@
   }
 }
 
+/* Hover effect to scale elements slightly */
 .hover-scale {
   transition: transform 0.3s ease;
 }
@@ -47,6 +54,7 @@
   transform: scale(1.05);
 }
 
+/* Glow effect for components to make them stand out */
 .glow {
   animation: glow 2s ease-in-out infinite alternate;
 }
@@ -58,4 +66,69 @@
   to {
     box-shadow: 0 0 20px var(--primary-orange);
   }
+}
+
+/* Animation for sliding in elements from the left */
+.slide-left {
+  animation: slideLeft 0.5s ease-out;
+}
+
+/* Keyframe for the slide-left effect */
+@keyframes slideLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for sliding in elements from the right */
+.slide-right {
+  animation: slideRight 0.5s ease-out;
+}
+
+/* Keyframe for the slide-right effect */
+@keyframes slideRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for zoom-in effect for CTA (Call-to-Action) buttons */
+.zoom-in {
+  animation: zoomIn 0.4s ease-in-out;
+}
+
+/* Keyframe for the zoom-in effect */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Smooth transition effect for the card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Adding a subtle fade-in effect for the footer section */
+.footer {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Slide-up animation for page sections when they are revealed */
+.section-reveal {
+  animation: slideUp 0.8s ease-out;
 }

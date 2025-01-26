@@ -1,3 +1,7 @@
+import React from 'react';
+import { fetchCryptoData, formatCryptoData, reportError } from './utils'; // Import necessary utilities
+import { ArrowRight } from './Icons'; // Ensure this icon is imported correctly
+
 function LivePrices() {
   const [prices, setPrices] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -84,3 +88,5 @@ function LivePrices() {
     </section>
   );
 }
+
+export default LivePrices;

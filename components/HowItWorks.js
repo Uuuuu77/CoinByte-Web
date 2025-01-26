@@ -1,22 +1,25 @@
+import React from 'react';
+import { Phone, Wallet, Exchange, ArrowRight } from './Icons'; // Ensure icons are imported correctly
+
 function HowItWorks() {
   const steps = [
     {
       step: 1,
       title: "Download the Wallet",
       description: "Get started by downloading our secure digital wallet app",
-      icon: <Icons.Phone />
+      icon: <Phone />
     },
     {
       step: 2,
       title: "Add Funds",
       description: "Top-up your wallet using bank transfer or credit card",
-      icon: <Icons.Wallet />
+      icon: <Wallet />
     },
     {
       step: 3,
       title: "Start Transacting",
       description: "Send, receive, and trade cryptocurrencies instantly",
-      icon: <Icons.Exchange />
+      icon: <Exchange />
     }
   ];
 
@@ -39,7 +42,7 @@ function HowItWorks() {
               data-name={`step-${index + 1}`}
               className="relative flex-1 max-w-sm w-full"
             >
-              <div className="card text-center">
+              <div className="card text-center relative">
                 <div className="text-[#FF6A00] mb-4">{step.icon}</div>
                 <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-[#FF6A00] flex items-center justify-center font-bold">
                   {step.step}
@@ -49,7 +52,7 @@ function HowItWorks() {
               </div>
               {index < steps.length - 1 && (
                 <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-[#FF6A00]">
-                  <Icons.ArrowRight />
+                  <ArrowRight />
                 </div>
               )}
             </div>
@@ -59,3 +62,5 @@ function HowItWorks() {
     </section>
   );
 }
+
+export default HowItWorks;

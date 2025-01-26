@@ -1,11 +1,13 @@
+import React from 'react';
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
     try {
-      setIsMenuOpen(!isMenuOpen);
+      setIsMenuOpen(prev => !prev);
     } catch (error) {
-      reportError(error);
+      console.error('Error toggling the menu:', error);
     }
   };
 
@@ -32,6 +34,7 @@ function Header() {
             data-name="mobile-menu-button"
             className="md:hidden text-white"
             onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -53,3 +56,5 @@ function Header() {
     </header>
   );
 }
+
+export default Header;

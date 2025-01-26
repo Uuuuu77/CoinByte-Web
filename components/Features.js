@@ -1,34 +1,37 @@
+import React from 'react';
+import { Lightning, Shield, Currency, Chart, Globe, Chat } from './Icons'; // Ensure icons are imported correctly
+
 function Features() {
   const features = [
     {
       title: "Instant Transfers",
       description: "Send and receive payments globally in seconds with minimal fees",
-      icon: <Icons.Lightning />
+      icon: <Lightning />
     },
     {
       title: "Secure Storage",
       description: "Military-grade encryption keeps your assets safe",
-      icon: <Icons.Shield />
+      icon: <Shield />
     },
     {
       title: "Multi-Currency Support",
       description: "Support for major stablecoins and cryptocurrencies",
-      icon: <Icons.Currency />
+      icon: <Currency />
     },
     {
       title: "Smart Trading",
       description: "AI-powered trading features and market insights",
-      icon: <Icons.Chart />
+      icon: <Chart />
     },
     {
       title: "DeFi Integration",
       description: "Access to decentralized finance protocols",
-      icon: <Icons.Globe />
+      icon: <Globe />
     },
     {
       title: "24/7 Support",
       description: "Round-the-clock customer support and assistance",
-      icon: <Icons.Chat />
+      icon: <Chat />
     }
   ];
 
@@ -49,9 +52,11 @@ function Features() {
             <div
               key={index}
               data-name={`feature-card-${index}`}
-              className="card hover-scale"
+              className="card hover:scale-105 transition-transform"
             >
-              <div className="text-[#FF6A00] mb-4">{feature.icon}</div>
+              <div className="text-[#FF6A00] mb-4">
+                {feature.icon}
+              </div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
             </div>
@@ -61,3 +66,5 @@ function Features() {
     </section>
   );
 }
+
+export default Features;

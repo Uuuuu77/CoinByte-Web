@@ -4,7 +4,7 @@ function Hero() {
       trackEvent('explore_features_clicked');
       document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
-      reportError(error);
+      console.error('Error handling explore features:', error);
     }
   };
 
@@ -26,12 +26,14 @@ function Hero() {
             <button 
               className="button-primary text-lg"
               onClick={handleGetStarted}
+              aria-label="Get Started with CoinByte"
             >
               Get Started
             </button>
             <button 
               className="button-secondary text-lg"
               onClick={handleExploreFeatures}
+              aria-label="Explore CoinByte Features"
             >
               Explore Features
             </button>
@@ -45,10 +47,9 @@ function Hero() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {[
                   { label: 'Early Access Users', value: '20+' },
-		  { label: 'Prototype Transactions', value: '10+' },
-		  { label: 'Supported Cryptos', value: '5+' },
-		  { label: 'Development Hours', value: '500+' }
-
+                  { label: 'Prototype Transactions', value: '10+' },
+                  { label: 'Supported Cryptos', value: '5+' },
+                  { label: 'Development Hours', value: '500+' }
                 ].map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="text-2xl md:text-3xl font-bold text-[#FF6A00]">{stat.value}</div>
@@ -63,3 +64,5 @@ function Hero() {
     </section>
   );
 }
+
+export default Hero;
