@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  /* Color system */
+  --primary-orange: #FF6A00;
+  --primary-orange-500: #ff8033;
+  --primary-gold: #FFB400;
+  --primary-black: #1A1A1A;
+  --primary-950: #0A0A0A;
+  --secondary-gray: #333333;
+  --secondary-light: #E0E0E0;
+  
+  /* Blur effects */
+  --backdrop-blur: blur(16px);
+  
+  /* Borders */
+  --border-radius: 0.75rem;
+  --border-primary: 1px solid rgba(255, 106, 0, 0.1);
+  
+  /* Shadows */
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(255, 106, 0, 0.15);
+}
+
+/* Base styles */
+body {
+  @apply bg-primary-black text-secondary-light font-sans;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-bold;
+}
+
+/* Global component classes */
+.backdrop-blur-lg {
+  backdrop-filter: var(--backdrop-blur);
+}
+
+.gradient-text-orange {
+  @apply bg-gradient-to-r from-primary-orange to-primary-gold text-transparent bg-clip-text;
+}
+
+.gradient-border {
+  @apply border border-transparent bg-origin-border bg-gradient-to-r from-primary-orange to-primary-gold;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--primary-950);
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-orange rounded-full;
+}
+
+/* Form elements */
+input, textarea, select {
+  @apply bg-primary-950 border border-secondary-gray rounded-lg px-4 py-3 text-secondary-light;
+  transition: border-color var(--transition-default);
+}
+
+input:focus, textarea:focus, select:focus {
+  @apply border-primary-orange outline-none ring-1 ring-primary-orange/20;
+}
+
+/* React specific fixes */
+[data-name] {
+  @apply contents; /* Fix for motion.div wrapper styles */
+}
