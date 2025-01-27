@@ -1,9 +1,8 @@
 // src/app.jsx
 import { lazy, Suspense } from 'react';
 import { Loader } from './components/Loader';
-import ErrorBoundary from './components/ErrorBoundary'; // Create this component
+import ErrorBoundary from './components/ErrorBoundary';
 
-// Lazy load components with error boundaries
 const lazyWithRetry = (componentImport) =>
   lazy(async () => {
     try {
@@ -14,9 +13,18 @@ const lazyWithRetry = (componentImport) =>
     }
   });
 
+// Lazy-loaded components
 const Header = lazyWithRetry(() => import('./components/Header'));
 const Hero = lazyWithRetry(() => import('./components/Hero'));
-// Repeat for other components...
+const Features = lazyWithRetry(() => import('./components/Features'));
+const HowItWorks = lazyWithRetry(() => import('./components/HowItWorks'));
+const APIFeatures = lazyWithRetry(() => import('./components/APIFeatures'));
+const BusinessAPI = lazyWithRetry(() => import('./components/BusinessAPI'));
+const LiveMarketData = lazyWithRetry(() => import('./components/LiveMarketData'));
+const LivePrices = lazyWithRetry(() => import('./components/LivePrices'));
+const TransactionStatus = lazyWithRetry(() => import('./components/TransactionStatus'));
+const CallToAction = lazyWithRetry(() => import('./components/CallToAction'));
+const Footer = lazyWithRetry(() => import('./components/Footer'));
 
 export default function App() {
   return (
