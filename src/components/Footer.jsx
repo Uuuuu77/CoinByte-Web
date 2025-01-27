@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MailIcon } from '@heroicons/react/outline'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import { SocialIcons } from '../utils/icons'
 
 const Footer = () => {
@@ -55,7 +55,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-gray-100 mb-4">Stay Updated</h4>
             <form onSubmit={handleSubmit} className="relative">
               <div className="flex items-center bg-gray-800 rounded-lg p-2">
-                <MailIcon className="w-5 h-5 text-gray-400 ml-2" />
+                <EnvelopeIcon className="w-5 h-5 text-gray-400 ml-2" />
                 <input
                   type="email"
                   placeholder="Enter your email"
