@@ -1,12 +1,19 @@
 import { motion } from 'framer-motion'
-import { LightningBoltIcon, ShieldCheckIcon, CurrencyDollarIcon, ChartBarIcon, GlobeIcon, ChatIcon } from '@heroicons/react/outline'
+import { 
+  BoltIcon,
+  ShieldCheckIcon,
+  CurrencyDollarIcon,
+  ChartBarIcon,
+  GlobeAltIcon,
+  ChatBubbleOvalLeftIcon
+} from '@heroicons/react/24/outline'
 
 const Features = () => {
   const features = [
     {
       title: "Instant Transfers",
       description: "Global payments in seconds with 0.1% fees",
-      icon: <LightningBoltIcon className="w-8 h-8" />,
+      icon: <BoltIcon className="w-8 h-8" />,
       delay: 0.1
     },
     {
@@ -30,13 +37,13 @@ const Features = () => {
     {
       title: "DeFi Access",
       description: "Integrated decentralized finance protocols",
-      icon: <GlobeIcon className="w-8 h-8" />,
+      icon: <GlobeAltIcon className="w-8 h-8" />,
       delay: 0.5
     },
     {
       title: "24/7 Support",
       description: "Priority support & dedicated account managers",
-      icon: <ChatIcon className="w-8 h-8" />,
+      icon: <ChatBubbleOvalLeftIcon className="w-8 h-8" />,
       delay: 0.6
     }
   ]
@@ -64,7 +71,7 @@ const Features = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: feature.day }}
+              transition={{ delay: feature.delay }}  // Fixed typo: day → delay
               viewport={{ once: true }}
               className="group p-8 rounded-2xl backdrop-blur-lg border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 bg-black/30"
             >

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Header = () => {
@@ -32,9 +32,9 @@ const Header = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <XIcon className="w-6 h-6" />
+              <XMarkIcon className="w-6 h-6" />
             ) : (
-              <MenuIcon className="w-6 h-6" />
+              <Bars3Icon className="w-6 h-6" />
             )}
           </button>
         </div>
