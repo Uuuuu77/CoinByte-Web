@@ -4,55 +4,174 @@
 @tailwind utilities;
 
 :root {
-  /* Color system */
+  /* Design System */
+  --spacing-base: 4px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  
+  /* Colors */
   --primary-orange: #FF6A00;
-  --primary-orange-500: #ff8033;
   --primary-gold: #FFB400;
   --primary-black: #1A1A1A;
   --primary-950: #0A0A0A;
   --secondary-gray: #333333;
   --secondary-light: #E0E0E0;
+  --success-green: #10B981;
+  --error-red: #EF4444;
   
-  /* Transition timing */
-  --transition-default: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Typography */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
   
-  /* Blur effects */
+  /* Effects */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 25px rgba(255, 106, 0, 0.2);
   --backdrop-blur: blur(16px);
   
-  /* Borders */
-  --border-radius: 0.75rem;
-  --border-primary: 1px solid rgba(255, 106, 0, 0.1);
-  
-  /* Shadows */
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(255, 106, 0, 0.15);
+  /* Transitions */
+  --transition-default: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms ease-in-out;
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply bg-primary-black text-secondary-light font-sans;
+    @apply bg-primary-black text-secondary-light font-sans text-base leading-relaxed;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-heading font-bold leading-tight tracking-tighter;
+  }
+
+  h1 { @apply text-4xl md:text-5xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
+  
+  p {
+    @apply text-secondary-light/80 max-w-prose;
+    line-height: 1.6;
+  }
+
+  a {
+    @apply text-primary-orange hover:text-primary-gold transition-colors;
   }
 }
 
 @layer components {
-  .backdrop-blur-lg {
-    backdrop-filter: var(--backdrop-blur);
+  /* ========== Reusable Components ========== */
+  .container {
+    @apply mx-auto px-4;
+    width: 100%;
+    max-width: 1440px;
+    
+    @media (min-width: 640px) { padding: 0 32px; }
+    @media (min-width: 1024px) { padding: 0 64px; }
   }
 
-  .gradient-text-orange {
-    @apply bg-gradient-to-r from-primary-orange to-primary-gold text-transparent bg-clip-text;
+  /* ----- Buttons ----- */
+  .btn-primary {
+    @apply px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg 
+           bg-gradient-to-r from-primary-orange to-primary-gold text-primary-black 
+           hover:brightness-110 hover:scale-105 transform-gpu shadow-lg;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-default);
   }
 
-  .gradient-border {
-    @apply border border-transparent bg-origin-border bg-gradient-to-r from-primary-orange to-primary-gold;
+  .btn-secondary {
+    @apply px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-base md:text-lg border-2 
+           border-white/30 bg-white/5 backdrop-blur-lg hover:border-primary-orange 
+           hover:bg-primary-orange/10 hover:scale-105 transform-gpu;
+    transition: var(--transition-default);
+  }
+
+  .btn-primary:focus-visible,
+  .btn-secondary:focus-visible {
+    @apply outline-none ring-4 ring-primary-orange/30;
+  }
+
+  /* ----- Cards ----- */
+  .card {
+    @apply p-6 md:p-8 rounded-2xl backdrop-blur-lg border border-orange-500/20 
+           hover:border-orange-500/40 transition-all bg-black/30;
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* ----- Forms ----- */
+  .input-field {
+    @apply w-full bg-primary-950 border border-secondary-gray rounded-lg px-4 py-3 
+           text-secondary-light placeholder-gray-500 focus:border-primary-orange 
+           focus:ring-2 focus:ring-primary-orange/20;
+    transition: var(--transition-fast);
+  }
+
+  .form-label {
+    @apply block text-sm font-medium mb-2 text-secondary-light;
+  }
+
+  .form-error {
+    @apply text-error-red text-sm mt-1;
+  }
+
+  /* ----- Responsive Utilities ----- */
+  .responsive-grid {
+    @apply grid grid-cols-1 gap-6;
+    
+    @media (min-width: 640px) { @apply grid-cols-2; }
+    @media (min-width: 1024px) { @apply grid-cols-3; }
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
   }
 }
 
-/* Custom scrollbar */
+@layer utilities {
+  /* ========== Utility Classes ========== */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent;
+  }
+
+  .backdrop-glass {
+    @apply backdrop-blur-lg bg-black/30;
+  }
+
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ----- Spacing ----- */
+  .flow > * + * {
+    margin-top: var(--flow-space, 1em);
+  }
+
+  /* ----- Animations ----- */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ========== Global Overrides ========== */
 ::-webkit-scrollbar {
   width: 8px;
   background: var(--primary-950);
@@ -62,34 +181,30 @@
   @apply bg-primary-orange rounded-full;
 }
 
-/* Form elements */
-input, textarea, select {
-  @apply bg-primary-950 border border-secondary-gray rounded-lg px-4 py-3 text-secondary-light;
-  transition: border-color var(--transition-default);
+::selection {
+  @apply bg-primary-orange/30 text-white;
 }
 
-input:focus, textarea:focus, select:focus {
-  @apply border-primary-orange outline-none ring-1 ring-primary-orange/20;
+/* ========== Responsive Typography ========== */
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
 }
 
-/* Animation fixes */
-[data-name] {
-  @apply contents;
+@media (min-width: 1280px) {
+  html {
+    font-size: 20px;
+  }
 }
 
-/* Font loading optimization */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.woff2') format('woff2');
+/* ========== Print Styles ========== */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
 }
