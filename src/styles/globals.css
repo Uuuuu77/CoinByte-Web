@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* Color system */
@@ -9,6 +12,9 @@
   --primary-950: #0A0A0A;
   --secondary-gray: #333333;
   --secondary-light: #E0E0E0;
+  
+  /* Transition timing */
+  --transition-default: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   
   /* Blur effects */
   --backdrop-blur: blur(16px);
@@ -22,27 +28,28 @@
   --shadow-glow: 0 0 20px rgba(255, 106, 0, 0.15);
 }
 
-/* Base styles */
-body {
-  @apply bg-primary-black text-secondary-light font-sans;
+@layer base {
+  body {
+    @apply bg-primary-black text-secondary-light font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  @apply font-heading font-bold;
-}
+@layer components {
+  .backdrop-blur-lg {
+    backdrop-filter: var(--backdrop-blur);
+  }
 
-/* Global component classes */
-.backdrop-blur-lg {
-  backdrop-filter: var(--backdrop-blur);
-}
+  .gradient-text-orange {
+    @apply bg-gradient-to-r from-primary-orange to-primary-gold text-transparent bg-clip-text;
+  }
 
-.gradient-text-orange {
-  @apply bg-gradient-to-r from-primary-orange to-primary-gold text-transparent bg-clip-text;
-}
-
-.gradient-border {
-  @apply border border-transparent bg-origin-border bg-gradient-to-r from-primary-orange to-primary-gold;
+  .gradient-border {
+    @apply border border-transparent bg-origin-border bg-gradient-to-r from-primary-orange to-primary-gold;
+  }
 }
 
 /* Custom scrollbar */
@@ -65,7 +72,24 @@ input:focus, textarea:focus, select:focus {
   @apply border-primary-orange outline-none ring-1 ring-primary-orange/20;
 }
 
-/* React specific fixes */
+/* Animation fixes */
 [data-name] {
-  @apply contents; /* Fix for motion.div wrapper styles */
+  @apply contents;
+}
+
+/* Font loading optimization */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.woff2') format('woff2');
 }
