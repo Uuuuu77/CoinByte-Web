@@ -1,4 +1,4 @@
-import { FaPlug, FaChartLine, FaExchangeAlt, FaCogs } from 'react-icons/fa6'
+import { FaPlug, FaChartLine, FaRightLeft, FaGears, FaArrowUpRightFromSquare } from 'react-icons/fa6'
 
 const BusinessAPI = () => {
   const apiBenefits = [
@@ -17,13 +17,13 @@ const BusinessAPI = () => {
     {
       title: "Global Payments",
       description: "Process cross-border payments in 150+ currencies with instant settlement",
-      icon: <FaExchangeAlt className="w-8 h-8" />,
+      icon: <FaRightLeft className="w-8 h-8" />,
       gradient: "from-[#FF6A00] to-[#FFB400]"
     },
     {
       title: "Custom Workflows",
       description: "White-label solutions with customizable payment flows and risk controls",
-      icon: <FaCogs className="w-8 h-8" />,
+      icon: <FaGears className="w-8 h-8" />,
       gradient: "from-[#FFB400] to-[#FF6A00]"
     }
   ]
@@ -72,7 +72,7 @@ const BusinessAPI = () => {
             className="button-primary-lg hover:scale-105 transition-transform"
           >
             Contact Sales
-            <FaArrowUpRight className="ml-2 w-4 h-4" />
+            <FaArrowUpRightFromSquare className="ml-2 w-4 h-4" />
           </a>
         </div>
       </div>
