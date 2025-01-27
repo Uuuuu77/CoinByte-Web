@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { MailIcon } from '@heroicons/react/outline'
-import { TwitterIcon, GitHubIcon, LinkedInIcon } from './SocialIcons'
+import { SocialIcons } from '../utils/icons'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const { Twitter, GitHub, LinkedIn } = SocialIcons
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -26,9 +27,9 @@ const Footer = () => {
               Revolutionizing global payments through blockchain technology
             </p>
             <div className="flex space-x-4">
-              <TwitterIcon className="w-6 h-6 text-gray-400 hover:text-primary-orange transition-colors" />
-              <GitHubIcon className="w-6 h-6 text-gray-400 hover:text-primary-orange transition-colors" />
-              <LinkedInIcon className="w-6 h-6 text-gray-400 hover:text-primary-orange transition-colors" />
+              <Twitter className="w-6 h-6 text-gray-400 hover:text-primary-orange transition-colors" />
+              <GitHub className="w-6 h-6 text-gray-400 hover:text-primary-orange transition-colors" />
+              <LinkedIn className="w-6 h-6 text-gray-400 hover:text-primary-orange transition-colors" />
             </div>
           </div>
 
