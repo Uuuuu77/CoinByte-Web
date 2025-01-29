@@ -36,23 +36,21 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold text-secondary-light mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-secondary-light mb-4">Product</h4>
             <ul className="space-y-3">
               <li><a href="#features" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Features</a></li>
-              <li><a href="#how-it-works" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">How It Works</a></li>
-              <li><a href="#prices" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Prices</a></li>
-              <li><a href="#blog" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Blog</a></li>
+              <li><a href="#security" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Security</a></li>
+              <li><a href="#enterprise" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Enterprise</a></li>
             </ul>
           </div>
 
-          {/* Support Section */}
+          {/* Company Section */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold text-secondary-light mb-4">Support</h4>
+            <h4 className="text-lg font-semibold text-secondary-light mb-4">Company</h4>
             <ul className="space-y-3">
-              <li><a href="#help" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Help Center</a></li>
-              <li><a href="#contact" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Contact Us</a></li>
-              <li><a href="#privacy" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Privacy Policy</a></li>
-              <li><a href="#terms" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Terms of Use</a></li>
+              <li><a href="#about" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">About</a></li>
+              <li><a href="#careers" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Careers</a></li>
+              <li><a href="#blog" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Blog</a></li>
             </ul>
           </div>
 

@@ -10,36 +10,40 @@ const CallToAction = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
           className="text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Ready to Transform Your Payments?
           </h2>
           <p className="text-xl text-secondary-light/90 mb-8 max-w-3xl mx-auto">
-            Join Hundreds of businesses already using CoinByte for fast, secure, and cost-effective global transactions
+            Join hundreds of businesses already using CoinByte for fast, secure, and cost-effective global transactions
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="/get-started"
-              className="button-primary hover:scale-105"
+              href="https://wt.ls/waitlist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-primary hover:scale-105 group"
             >
-              Get Started Free
-              <FaArrowRight className="ml-2 w-4 h-4" />
+              Join Waitlist Now
+              <FaArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
             
             <a
-              href="/demo"
+              href="https://wt.ls/waitlist"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button-secondary hover:scale-105"
             >
-              Request Demo
+              Request Early Access
             </a>
           </div>
 
           <p className="mt-8 text-sm text-secondary-light/80">
-            No credit card required • Start in minutes
+            No credit card required • Priority access for early signups
           </p>
         </motion.div>
       </div>
