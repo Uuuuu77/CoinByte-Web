@@ -71,9 +71,9 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center justify-center gap-6 mb-12 opacity-80 hover:opacity-100 transition-opacity">
-            <img src="/mpesa-logo.svg" alt="M-Pesa" className="h-10" />
-            <img src="/flutterwave-logo.svg" alt="Flutterwave" className="h-8" />
-            <img src="/celo-logo.svg" alt="Celo" className="h-7" />
+            <img src="/mpesa-logo.png" alt="M-Pesa" className="h-10" />
+            <img src="/flutterwave-logo.png" alt="Flutterwave" className="h-8" />
+            <img src="/celo-logo.png" alt="Celo" className="h-7" />
           </div>
         </motion.div>
 
