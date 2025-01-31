@@ -94,6 +94,17 @@
   }
 }
 
+.badge {
+  @apply text-sm font-medium inline-flex items-center;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  @apply opacity-90;
+  transform: translateY(-1px);
+}
+
 /* Fixed responsive typography */
 @media (min-width: 1024px) {
   html { 
