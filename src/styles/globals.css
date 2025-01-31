@@ -100,6 +100,18 @@
   }
 }
 
+@layer components {
+  .card {
+    @apply p-8 rounded-2xl border border-gray-800 hover:border-orange-500/30 transition-all duration-300;
+    background: rgba(16, 16, 16, 0.4);
+    backdrop-filter: blur(12px);
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(255, 106, 0, 0.05);
+  }
+}
+
 .badge {
   @apply text-sm font-medium inline-flex items-center;
   backdrop-filter: blur(4px);

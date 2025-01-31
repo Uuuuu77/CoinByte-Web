@@ -1,55 +1,61 @@
 import { motion } from 'framer-motion'
 import { 
-  BoltIcon,
   ShieldCheckIcon,
-  CurrencyDollarIcon,
-  ChartBarIcon,
+  CpuChipIcon,
   GlobeAltIcon,
-  ChatBubbleOvalLeftIcon
+  ArrowsRightLeftIcon,
+  BanknotesIcon,
+  CommandLineIcon
 } from '@heroicons/react/24/outline'
 
 const Features = () => {
   const features = [
     {
-      title: "Instant Transfers",
-      description: "Global payments in seconds with 0.1% fees",
-      icon: <BoltIcon className="w-8 h-8" />,
-      delay: 0.1
-    },
-    {
-      title: "Secure Storage",
-      description: "AES-256 encryption & multi-sig wallets",
+      title: "Compliance Tools",
+      description: "Embedded KYC/AML & auto-generated audit trails",
       icon: <ShieldCheckIcon className="w-8 h-8" />,
-      delay: 0.2
+      delay: 0.1,
+      gradient: "from-green-400 to-primary-gold"
     },
     {
-      title: "Multi-Currency",
-      description: "100+ cryptocurrencies & stablecoins",
-      icon: <CurrencyDollarIcon className="w-8 h-8" />,
-      delay: 0.3
+      title: "AI Optimization",
+      description: "Dynamic fee optimization & fraud detection",
+      icon: <CpuChipIcon className="w-8 h-8" />,
+      delay: 0.2,
+      gradient: "from-purple-400 to-primary-orange"
     },
     {
-      title: "Smart Trading",
-      description: "AI-powered market insights & automation",
-      icon: <ChartBarIcon className="w-8 h-8" />,
-      delay: 0.4
-    },
-    {
-      title: "DeFi Access",
-      description: "Integrated decentralized finance protocols",
+      title: "Cross-Border Rails",
+      description: "Africa-focused payment corridors with mobile money integration",
       icon: <GlobeAltIcon className="w-8 h-8" />,
-      delay: 0.5
+      delay: 0.3,
+      gradient: "from-blue-400 to-primary-gold"
     },
     {
-      title: "24/7 Support",
-      description: "Priority support & dedicated account managers",
-      icon: <ChatBubbleOvalLeftIcon className="w-8 h-8" />,
-      delay: 0.6
+      title: "Multi-Chain Support",
+      description: "Ethereum, Polygon & Solana stablecoin interoperability",
+      icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
+      delay: 0.4,
+      gradient: "from-primary-orange to-primary-gold"
+    },
+    {
+      title: "DeFi Integrations",
+      description: "Yield earning & decentralized lending protocols",
+      icon: <BanknotesIcon className="w-8 h-8" />,
+      delay: 0.5,
+      gradient: "from-yellow-400 to-primary-orange"
+    },
+    {
+      title: "Enterprise APIs",
+      description: "Pre-built Shopify, WooCommerce & payroll integrations",
+      icon: <CommandLineIcon className="w-8 h-8" />,
+      delay: 0.6,
+      gradient: "from-primary-gold to-primary-orange"
     }
   ]
 
   return (
-    <section id="features" className="py-24 bg-gradient-to-b from-primary-black to-primary-950">
+    <section id="features" className="py-24 bg-gradient-to-b from-primary-black to-[#0F0B07]">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,32 +64,38 @@ const Features = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Enterprise-Grade Features
+            Hybrid Financial Infrastructure
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Everything you need to manage digital assets at scale
+          <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
+            Bridging enterprise compliance with decentralized innovation
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: feature.delay }}  // Fixed typo: day → delay
-              viewport={{ once: true }}
-              className="group p-8 rounded-2xl backdrop-blur-lg border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 bg-black/30"
+              transition={{ delay: feature.delay }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="card group relative overflow-hidden"
             >
-              <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-primary-orange to-primary-gold">
-                {feature.icon}
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
+              
+              <div className="relative p-8 h-full">
+                <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-primary-orange/20 to-primary-gold/20 backdrop-blur-sm">
+                  <div className="text-primary-orange">
+                    {feature.icon}
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-100 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-secondary-light/90 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-100 mb-4">
-                {feature.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>
