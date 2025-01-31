@@ -1,80 +1,137 @@
-import { FaPlug, FaChartLine, FaRightLeft, FaGears, FaArrowUpRightFromSquare } from 'react-icons/fa6'
+import { motion } from 'framer-motion'
+import { 
+  ShieldCheckIcon,
+  CpuChipIcon,
+  GlobeAltIcon,
+  CommandLineIcon,
+  ArrowsRightLeftIcon,
+  BuildingLibraryIcon
+} from '@heroicons/react/24/outline'
 
 const BusinessAPI = () => {
   const apiBenefits = [
     {
-      title: "Enterprise Integration",
-      description: "Seamless API integration with 99.9% uptime SLA and enterprise-grade security",
-      icon: <FaPlug className="w-8 h-8" />,
-      gradient: "from-[#FF6A00] to-[#FFB400]"
+      title: "Compliance Engine",
+      description: "Auto-generated audit trails & KYC/AML workflows",
+      subtext: "GDPR, MiCA & CBN compliant",
+      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      gradient: "from-green-400 to-primary-gold",
+      delay: 0.1
     },
     {
-      title: "Smart Analytics",
-      description: "Real-time transaction insights with customizable dashboards and webhooks",
-      icon: <FaChartLine className="w-8 h-8" />,
-      gradient: "from-[#FFB400] to-[#FF6A00]"
+      title: "AI Optimization",
+      description: "Dynamic fee routing & liquidity management",
+      subtext: "Fraud detection ML models",
+      icon: <CpuChipIcon className="w-8 h-8" />,
+      gradient: "from-purple-400 to-primary-orange",
+      delay: 0.2
     },
     {
-      title: "Global Payments",
-      description: "Process cross-border payments in 150+ currencies with instant settlement",
-      icon: <FaRightLeft className="w-8 h-8" />,
-      gradient: "from-[#FF6A00] to-[#FFB400]"
+      title: "African Corridors",
+      description: "NGN/KES/GHS payment routes with mobile money",
+      subtext: "M-Pesa, Flutterwave, Airtel Money",
+      icon: <GlobeAltIcon className="w-8 h-8" />,
+      gradient: "from-blue-400 to-primary-gold",
+      delay: 0.3
     },
     {
-      title: "Custom Workflows",
-      description: "White-label solutions with customizable payment flows and risk controls",
-      icon: <FaGears className="w-8 h-8" />,
-      gradient: "from-[#FFB400] to-[#FF6A00]"
+      title: "DeFi Bridge",
+      description: "Convert between fiat & stablecoins automatically",
+      subtext: "USDC, cUSD, naira stablecoins",
+      icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
+      gradient: "from-primary-orange to-primary-gold",
+      delay: 0.4
     }
   ]
 
   return (
-    <section id="business-api" className="py-24 bg-gradient-to-br from-primary-black to-[#2A2A2A]">
+    <section id="business-api" className="py-24 bg-gradient-to-br from-primary-black to-[#0F0B07]">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Enterprise-Grade Payment Infrastructure
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
+            Hybrid Financial Infrastructure
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Power your business with bank-grade financial infrastructure and global payment capabilities
+          <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
+            Enterprise APIs with decentralized settlement rails
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {apiBenefits.map((benefit, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative p-8 rounded-2xl backdrop-blur-lg border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 bg-black/30"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: benefit.delay }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="card group relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br opacity-20 group-hover:opacity-30 transition-opacity duration-300 blur-xl" />
-              <div className="relative space-y-6">
-                <div className="flex items-center gap-6">
-                  <div className="p-4 rounded-xl bg-gradient-to-r from-primary-orange to-primary-gold">
-                    {benefit.icon}
+              <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
+              
+              <div className="relative p-8 h-full flex flex-col">
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex-shrink-0 p-4 rounded-xl bg-gradient-to-r from-primary-orange/20 to-primary-gold/20 backdrop-blur-sm">
+                    <div className="text-primary-orange">
+                      {benefit.icon}
+                    </div>
                   </div>
                   <h3 className="text-2xl font-semibold text-gray-100">
                     {benefit.title}
                   </h3>
                 </div>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-secondary-light/90 mb-4">
                   {benefit.description}
                 </p>
+                <div className="mt-auto">
+                  <p className="text-xs text-primary-orange/80 font-mono">
+                    {benefit.subtext}
+                  </p>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <a
-            href="https://business.coinbyte.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button-primary-lg hover:scale-105 transition-transform"
-          >
-            Contact Sales
-            <FaArrowUpRightFromSquare className="ml-2 w-4 h-4" />
-          </a>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mt-16 card max-w-4xl mx-auto"
+        >
+          <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0 bg-primary-orange/10 p-6 rounded-xl">
+              <BuildingLibraryIcon className="w-12 h-12 text-primary-orange" />
+            </div>
+            <div className="flex-grow">
+              <h3 className="text-2xl font-semibold text-gray-100 mb-4">
+                Enterprise-Grade Solutions
+              </h3>
+              <p className="text-secondary-light/90 mb-6">
+                Custom implementations for financial institutions and marketplaces
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  className="button-primary"
+                  onClick={() => window.open('https://business.coinbyte.com', '_blank')}
+                >
+                  Contact Enterprise Sales
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  className="button-secondary"
+                  onClick={() => window.open('#decentralized', '_blank')}
+                >
+                  Explore Decentralized Rails
+                </motion.button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
