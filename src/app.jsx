@@ -20,7 +20,6 @@ const Features = lazyWithRetry(() => import('./components/Features'));
 const HowItWorks = lazyWithRetry(() => import('./components/HowItWorks'));
 const APIFeatures = lazyWithRetry(() => import('./components/APIFeatures'));
 const BusinessAPI = lazyWithRetry(() => import('./components/BusinessAPI'));
-const LiveMarketData = lazyWithRetry(() => import('./components/LiveMarketData'));
 const LivePrices = lazyWithRetry(() => import('./components/LivePrices'));
 const TransactionStatus = lazyWithRetry(() => import('./components/TransactionStatus'));
 const CallToAction = lazyWithRetry(() => import('./components/CallToAction'));
@@ -41,7 +40,6 @@ export default function App() {
             <HowItWorks />
             <APIFeatures />
             <BusinessAPI />
-            <LiveMarketData />
             <LivePrices />
             <TransactionStatus />
             <CallToAction />
