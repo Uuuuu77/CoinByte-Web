@@ -66,6 +66,12 @@
   }
 }
 
+.card {
+  @apply p-6 rounded-xl border border-gray-800 hover:border-orange-500/30 transition-all;
+  background: rgba(16, 16, 16, 0.4);
+  backdrop-filter: blur(12px);
+}
+
 /* Moved media queries outside of @layer */
 @media (min-width: 640px) {
   .container {
