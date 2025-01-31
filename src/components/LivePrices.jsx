@@ -1,3 +1,4 @@
+// LivePrices.jsx
 import { useState, useEffect } from 'react'
 import { ArrowPathIcon } from '@heroicons/react/24/outline'
 import { fetchCryptoData, formatCryptoData } from '../utils/api'
@@ -60,15 +61,24 @@ const LivePrices = () => {
             {prices.map((coin) => (
               <div
                 key={coin.id}
-                className="p-6 bg-black/50 rounded-xl backdrop-blur-lg border border-orange-500/20 hover:border-orange-500/40 transition-all"
+                className="card hover:border-primary-orange/40"
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold">{coin.name}</h3>
-                    <p className="text-sm text-secondary-light">{coin.symbol}</p>
+                    <h3 className="text-xl font-semibold">
+                      {coin.symbol}
+                      {coin.region === 'africa' && (
+                        <span className="ml-2 text-xs bg-primary-gold/20 text-primary-gold px-2 py-1 rounded-full">
+                          Africa Focus
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-sm text-secondary-light">{coin.name}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-lg font-medium">${coin.price.toFixed(2)}</p>
+                    <p className="text-lg font-medium">
+                      {window.formatPrice(coin.price)}
+                    </p>
                     <p className={`text-sm ${coin.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                       {coin.change >= 0 ? '+' : ''}{coin.change.toFixed(2)}%
                     </p>

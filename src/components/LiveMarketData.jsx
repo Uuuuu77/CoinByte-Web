@@ -1,3 +1,4 @@
+// LiveMarketData.jsx
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowPathIcon, ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/outline'
@@ -22,12 +23,9 @@ const LiveMarketData = () => {
 
   useEffect(() => {
     fetchData()
-    const interval = setInterval(fetchData, 5000)
+    const interval = setInterval(fetchData, 30000)
     return () => clearInterval(interval)
   }, [])
-
-  // Stablecoin detection
-  const isStablecoin = (symbol) => ['USDT', 'USDC'].includes(symbol)
 
   return (
     <section className="py-24 bg-gradient-to-b from-primary-black to-[#0F0B07]">
@@ -41,7 +39,7 @@ const LiveMarketData = () => {
             Real-Time Asset Prices
           </h2>
           <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
-            Track stablecoins and digital assets across multiple chains
+            Track digital assets, stablecoins and global cryptocurrencies
           </p>
         </motion.div>
 
@@ -74,15 +72,22 @@ const LiveMarketData = () => {
                 <div className="relative p-6">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-4">
-                      <img 
-                        src={`/${coin.symbol.toLowerCase()}-logo.svg`}
-                        alt={coin.name}
-                        className="w-12 h-12 rounded-full bg-white/5 p-2"
-                      />
+                      <div className="relative">
+                        <img 
+                          src={`/${coin.symbol.toLowerCase()}-logo.svg`}
+                          alt={coin.name}
+                          className="w-12 h-12 rounded-full bg-white/5 p-2"
+                        />
+                        {coin.region === 'africa' && (
+                          <span className="absolute -bottom-1 -right-1 bg-primary-gold text-primary-black text-xs px-2 py-1 rounded-full">
+                            AFR
+                          </span>
+                        )}
+                      </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-100">
                           {coin.symbol}
-                          {isStablecoin(coin.symbol) && (
+                          {coin.type === 'stablecoin' && (
                             <span className="ml-2 text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">
                               Stablecoin
                             </span>
@@ -102,7 +107,7 @@ const LiveMarketData = () => {
                     <div className="flex justify-between items-center">
                       <span className="text-secondary-light/90">Price</span>
                       <span className="font-medium text-lg">
-                        {window.formatPrice(coin.price)}
+                        {window.formatPrice(coin.price, 'USD', coin.region === 'africa' ? 'en-ZA' : 'en-US')}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
@@ -132,7 +137,7 @@ const LiveMarketData = () => {
             className="text-secondary-light/90 hover:text-primary-orange transition-colors flex items-center justify-center gap-2 mx-auto text-sm"
           >
             <ArrowPathIcon className="w-5 h-5" />
-            Live Updates Every 5s
+            Live Updates Every 30s
           </motion.button>
         </div>
       </div>
