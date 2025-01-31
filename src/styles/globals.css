@@ -94,6 +94,12 @@
   }
 }
 
+@layer components {
+  .card {
+    @apply transition-all duration-300 hover:border-primary-orange/30;
+  }
+}
+
 .badge {
   @apply text-sm font-medium inline-flex items-center;
   backdrop-filter: blur(4px);
