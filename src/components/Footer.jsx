@@ -1,32 +1,17 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import { 
-  EnvelopeIcon,
   BuildingLibraryIcon,
   CodeBracketIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
 
 const Footer = () => {
-  const [email, setEmail] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    // Add actual subscription logic here
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setEmail('')
-    }, 2000)
-  }
-
   return (
     <footer className="border-t border-gray-800 bg-gradient-to-b from-primary-black to-[#0F0B07]">
       <div className="container py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent">
                 CoinByte
@@ -94,37 +79,6 @@ const Footer = () => {
               <li><a href="#aml" className="footer-link">AML Policy</a></li>
               <li><a href="#audits" className="footer-link">Audit Reports</a></li>
             </ul>
-          </div>
-
-          {/* Newsletter Section */}
-          <div>
-            <h4 className="text-lg font-semibold text-secondary-light mb-3 flex items-center gap-2">
-              <EnvelopeIcon className="w-5 h-5 text-primary-orange" />
-              <span>Newsletter</span>
-            </h4>
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Your work email"
-                  className="input-field pl-10 bg-primary-black/50 border-gray-800 focus:border-primary-orange text-sm"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <EnvelopeIcon className="w-5 h-5 text-secondary-light/50 absolute left-3 top-2.5" />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="button-primary w-full text-sm"
-              >
-                {isSubmitting ? 'Submitting...' : 'Get Updates'}
-              </button>
-            </form>
-            <p className="mt-2 text-xs text-secondary-light/60">
-              We respect your privacy. No spam ever.
-            </p>
           </div>
         </div>
       </div>
