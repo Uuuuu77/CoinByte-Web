@@ -1,16 +1,22 @@
+import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { EnvelopeIcon } from '@heroicons/react/24/outline'
-import { SocialIcons } from '../utils/icons'
+import { 
+  EnvelopeIcon,
+  CommandLineIcon,
+  GlobeAltIcon,
+  ShieldCheckIcon,
+  BuildingLibraryIcon,
+  CodeBracketIcon
+} from '@heroicons/react/24/outline'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const { Twitter, GitHub, LinkedIn } = SocialIcons
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Add your subscription logic here
+    // Add actual subscription logic
     setTimeout(() => {
       setIsSubmitting(false)
       setEmail('')
@@ -18,79 +24,132 @@ const Footer = () => {
   }
 
   return (
-    <footer className="border-t border-gray-800 bg-primary-black">
+    <footer className="border-t border-gray-800 bg-gradient-to-b from-primary-black to-[#0F0B07]">
       <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
-          <div className="md:col-span-4">
-            <h3 className="text-2xl font-bold text-primary-orange mb-6">CoinByte</h3>
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent">
+                CoinByte
+              </span>
+              <span className="text-sm text-primary-gold/80">v2.0</span>
+            </div>
             <p className="text-secondary-light/80 mb-6 max-w-sm">
-              Revolutionizing stablecoin payments with secure, fast, and low-cost global transactions.
+              Hybrid payment infrastructure for enterprises building with stablecoins
             </p>
-            <div className="flex space-x-4">
-              <Twitter className="w-6 h-6 text-secondary-light hover:text-primary-orange transition-colors duration-300" />
-              <GitHub className="w-6 h-6 text-secondary-light hover:text-primary-orange transition-colors duration-300" />
-              <LinkedIn className="w-6 h-6 text-secondary-light hover:text-primary-orange transition-colors duration-300" />
+            
+            <div className="flex items-center gap-4 mb-8">
+              <motion.a 
+                whileHover={{ scale: 1.1 }}
+                href="https://github.com/coinbyte"
+                className="p-2 rounded-lg bg-primary-black/50 border border-gray-800 hover:border-primary-orange/30"
+              >
+                <img src="/github-icon.svg" className="w-6 h-6" alt="GitHub" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="https://discord.gg/coinbyte"
+                className="p-2 rounded-lg bg-primary-black/50 border border-gray-800 hover:border-primary-orange/30"
+              >
+                <img src="/discord-icon.svg" className="w-6 h-6" alt="Discord" />
+              </motion.a>
+            </div>
+
+            <div className="flex items-center gap-3 opacity-80">
+              <span className="text-sm text-secondary-light/80">Trusted by:</span>
+              <img src="/mpesa-logo.svg" className="h-6" alt="M-Pesa" />
+              <img src="/flutterwave-logo.svg" className="h-5" alt="Flutterwave" />
+              <img src="/celo-logo.svg" className="h-4" alt="Celo" />
             </div>
           </div>
 
-          {/* Quick Links Section */}
-          <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold text-secondary-light mb-4">Product</h4>
+          {/* Solutions Section */}
+          <div>
+            <h4 className="text-lg font-semibold text-secondary-light mb-4 flex items-center gap-2">
+              <BuildingLibraryIcon className="w-5 h-5 text-primary-orange" />
+              Solutions
+            </h4>
             <ul className="space-y-3">
-              <li><a href="#features" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Features</a></li>
-              <li><a href="#security" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Security</a></li>
-              <li><a href="#enterprise" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Enterprise</a></li>
+              <li><a href="#enterprise" className="footer-link">Enterprise APIs</a></li>
+              <li><a href="#compliance" className="footer-link">Compliance Tools</a></li>
+              <li><a href="#africa" className="footer-link">African Rails</a></li>
+              <li><a href="#defi" className="footer-link">DeFi Integrations</a></li>
             </ul>
           </div>
 
-          {/* Company Section */}
-          <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold text-secondary-light mb-4">Company</h4>
+          {/* Developers Section */}
+          <div>
+            <h4 className="text-lg font-semibold text-secondary-light mb-4 flex items-center gap-2">
+              <CodeBracketIcon className="w-5 h-5 text-primary-orange" />
+              Developers
+            </h4>
             <ul className="space-y-3">
-              <li><a href="#about" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">About</a></li>
-              <li><a href="#careers" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Careers</a></li>
-              <li><a href="#blog" className="text-secondary-light/80 hover:text-primary-orange transition-colors duration-300">Blog</a></li>
+              <li><a href="#docs" className="footer-link">API Documentation</a></li>
+              <li><a href="#sdk" className="footer-link">SDK & Libraries</a></li>
+              <li><a href="#github" className="footer-link">Open Source</a></li>
+              <li><a href="#support" className="footer-link">Developer Support</a></li>
+            </ul>
+          </div>
+
+          {/* Legal Section */}
+          <div>
+            <h4 className="text-lg font-semibold text-secondary-light mb-4 flex items-center gap-2">
+              <ShieldCheckIcon className="w-5 h-5 text-primary-orange" />
+              Compliance
+            </h4>
+            <ul className="space-y-3">
+              <li><a href="#gdpr" className="footer-link">GDPR</a></li>
+              <li><a href="#mica" className="footer-link">MiCA</a></li>
+              <li><a href="#aml" className="footer-link">AML Policy</a></li>
+              <li><a href="#audits" className="footer-link">Audit Reports</a></li>
             </ul>
           </div>
 
           {/* Newsletter Section */}
-          <div className="md:col-span-4">
-            <h4 className="text-lg font-semibold text-secondary-light mb-4">Stay Updated</h4>
-            <p className="text-secondary-light/80 mb-4">Subscribe to our newsletter for the latest updates and exclusive offers.</p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              <div className="relative flex-grow">
-                <EnvelopeIcon className="w-5 h-5 text-secondary-light/50 absolute left-3 top-3.5" />
+          <div>
+            <h4 className="text-lg font-semibold text-secondary-light mb-4 flex items-center gap-2">
+              <EnvelopeIcon className="w-5 h-5 text-primary-orange" />
+              Newsletter
+            </h4>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="relative">
                 <input
                   type="email"
-                  placeholder="Enter your email"
-                  className="input-field pl-10"
+                  placeholder="Your work email"
+                  className="input-field pl-11 bg-primary-black/50 border-gray-800 focus:border-primary-orange"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
+                <EnvelopeIcon className="w-5 h-5 text-secondary-light/50 absolute left-3 top-3.5" />
               </div>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="button-primary"
+                className="button-primary w-full"
               >
-                {isSubmitting ? 'Submitting...' : 'Subscribe'}
+                {isSubmitting ? 'Submitting...' : 'Get Updates'}
               </button>
             </form>
+            <p className="mt-3 text-xs text-secondary-light/60">
+              We respect your privacy. No spam ever.
+            </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p className="text-secondary-light/80">&copy; {new Date().getFullYear()} CoinByte. All rights reserved.</p>
+            <p className="text-secondary-light/80">
+              © {new Date().getFullYear()} CoinByte • Stripe for Stablecoins
+            </p>
             <div className="flex space-x-4 text-secondary-light/80">
-              <a href="#privacy" className="hover:text-primary-orange transition-colors duration-300">Privacy Policy</a>
-              <span>•</span>
-              <a href="#terms" className="hover:text-primary-orange transition-colors duration-300">Terms of Service</a>
-              <span>•</span>
-              <a href="#cookies" className="hover:text-primary-orange transition-colors duration-300">Cookies</a>
+              <a href="#privacy" className="footer-link">Privacy</a>
+              <span className="text-primary-orange/50">•</span>
+              <a href="#terms" className="footer-link">Terms</a>
+              <span className="text-primary-orange/50">•</span>
+              <a href="#cookies" className="footer-link">Cookie Settings</a>
             </div>
           </div>
         </div>

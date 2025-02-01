@@ -138,6 +138,14 @@
   @apply font-mono text-sm p-4 rounded-lg border border-gray-800 bg-primary-black/50;
 }
 
+.footer-link {
+  @apply text-secondary-light/80 hover:text-primary-orange transition-colors;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-orange/30;
+}
+
 /* Fixed responsive typography */
 @media (min-width: 1024px) {
   html { 
