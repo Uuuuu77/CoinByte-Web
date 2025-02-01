@@ -67,9 +67,9 @@ const CallToAction = () => {
           <div className="mt-12 card inline-flex items-center gap-4 px-8 py-4 bg-primary-black/50">
             <div className="flex items-center gap-2 text-sm text-secondary-light/90">
               <span>Trusted by partners:</span>
-              <img src="/mpesa-logo.svg" alt="M-Pesa" className="h-6 opacity-80" />
-              <img src="/flutterwave-logo.svg" alt="Flutterwave" className="h-5 opacity-80" />
-              <img src="/celo-logo.svg" alt="Celo" className="h-4 opacity-80" />
+              <img src="/assets/mpesa-logo.svg" alt="M-Pesa" className="h-6 opacity-80" />
+              <img src="/assets/flutterwave-logo.svg" alt="Flutterwave" className="h-5 opacity-80" />
+              <img src="/assets/celo-logo.svg" alt="Celo" className="h-4 opacity-80" />
             </div>
           </div>
 
