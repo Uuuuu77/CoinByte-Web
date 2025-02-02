@@ -24,7 +24,7 @@ The CoinByte Web repository serves as the starting point for understanding our p
 
 ### Developer Docs
 - **How to integrate CoinByte APIs**: [API Docs](link-to-api)
-- **Contribution Guide**: We welcome developers from around the world to contribute to CoinByte Web. Whether you’re fixing bugs or adding new features, our community is growing, and we need your help!
+- **Contribution Guide**: We welcome developers from around the world to contribute to CoinByte. Whether you’re fixing bugs or adding new features, our community is growing, and we need your help!
 
 ### End-User Docs
 - **Getting Started with CoinByte**: Learn how to create an account, make transactions, and utilize the features of CoinByte.
@@ -40,7 +40,7 @@ CoinByte is constantly evolving. Here’s a glimpse of what’s to come:
 ## Join Us
 Be part of the future of decentralized finance. Follow us on social media and stay updated on the latest news and updates from CoinByte.
 
-- **Twitter**: [@CoinByte](link-to-twitter)
+- **Twitter**: [@CoinByte](https://x.com/_CoinByte)
 - **LinkedIn**: [CoinByte LinkedIn](link-to-linkedin)
 - **Telegram**: [Join our community](link-to-telegram)
 - **GitHub**: [CoinByte on GitHub](link-to-github)

@@ -13,8 +13,8 @@ const Header = () => {
   }, [])
 
   const navItems = [
-    { name: 'Developers', href: '#developers' },
-    { name: 'Business', href: '#business' },
+    { name: 'Developers', href: '#api-features' },
+    { name: 'Business', href: '#business-api' },
     { name: 'Pricing', href: '#pricing' }
   ]
 
