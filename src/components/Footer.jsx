@@ -24,17 +24,17 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <motion.a 
                 whileHover={{ scale: 1.1 }}
-                href="https://github.com/coinbyte"
+                href="https://github.com/Uuuuu77/CoinByte-Web"
                 className="p-2 rounded-lg bg-primary-black/50 border border-gray-800 hover:border-primary-orange/30"
               >
-                <img src="/github-icon.svg" className="w-5 h-5" alt="GitHub" />
+                <img src="/assets/github-icon.png" className="w-5 h-5" alt="GitHub" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="https://discord.gg/coinbyte"
+                href="https://x.com/_CoinByte"
                 className="p-2 rounded-lg bg-primary-black/50 border border-gray-800 hover:border-primary-orange/30"
               >
-                <img src="/discord-icon.svg" className="w-5 h-5" alt="Discord" />
+                <img src="/assets/twitter-icon.png" className="w-5 h-5" alt="X" />
               </motion.a>
             </div>
           </div>
