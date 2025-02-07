@@ -27,14 +27,14 @@ const Footer = () => {
                 href="https://github.com/Uuuuu77/CoinByte-Web"
                 className="p-2 rounded-lg bg-primary-black/50 border border-gray-800 hover:border-primary-orange/30"
               >
-                <img src="/assets/github-icon.png" className="w-5 h-5" alt="GitHub" />
+                <img src="/assets/github-logo.png" className="w-5 h-5" alt="GitHub" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="https://x.com/_CoinByte"
                 className="p-2 rounded-lg bg-primary-black/50 border border-gray-800 hover:border-primary-orange/30"
               >
-                <img src="/assets/twitter-icon.png" className="w-5 h-5" alt="X" />
+                <img src="/assets/twitter-logo.png" className="w-5 h-5" alt="X" />
               </motion.a>
             </div>
           </div>
