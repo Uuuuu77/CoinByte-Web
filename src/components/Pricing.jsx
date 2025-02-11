@@ -107,7 +107,7 @@ const Pricing = () => {
                   onClick={() =>
                     window.open(
                       tier.title === "Enterprise Tier"
-                        ? 'https://business.coinbyte.com'
+                        ? 'coinbyte002@gmail.com'
                         : 'https://wt.ls/waitlist',
                       '_blank'
                     )
