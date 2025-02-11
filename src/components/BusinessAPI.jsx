@@ -117,7 +117,7 @@ const BusinessAPI = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   className="button-primary"
-                  onClick={() => window.open('https://business.coinbyte.com', '_blank')}
+                  onClick={() => window.open('coinbyte002@gmail.com', '_blank')}
                 >
                   Contact Enterprise Sales
                 </motion.button>
