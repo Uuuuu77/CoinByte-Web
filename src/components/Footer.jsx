@@ -48,7 +48,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#enterprise" className="footer-link">Enterprise APIs</a></li>
               <li><a href="#compliance" className="footer-link">Compliance Tools</a></li>
-              <li><a href="#africa" className="footer-link">African Rails</a></li>
+              <li><a href="#decentralized" className="footer-link">Decentralized Rails</a></li>
               <li><a href="#defi" className="footer-link">DeFi Integrations</a></li>
             </ul>
           </div>
