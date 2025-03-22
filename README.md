@@ -10,7 +10,7 @@ CoinByte is a decentralized platform built with cutting-edge blockchain technolo
 - **Seamless Payments**: Send, receive, and manage cryptocurrencies including stablecoins like USDT and USDC with ease.
 - **Cross-Border Transactions**: Empowering individuals in regions like Africa, Asia, and Latin America to send money internationally without expensive fees.
 - **Decentralized Finance (DeFi)**: Dive into a wide range of DeFi services, including swaps, staking, and savings—all within CoinByte.
-- **Secure and Scalable**: Built on Ethereum and Solana blockchains for fast and cost-efficient transactions.
+- **Secure and Scalable**: Built on Ethereum, Solana, BNB chain, Polygon, and Base blockchains for fast and cost-efficient transactions.
 - **AI-Driven**: CoinByte integrates AI to optimize transactions, offer personalized financial insights, and enhance security.
 
 ## Why CoinByte?
@@ -43,4 +43,4 @@ Be part of the future of decentralized finance. Follow us on social media and st
 - **Twitter**: [@CoinByte](https://x.com/_CoinByte)
 - **LinkedIn**: [CoinByte LinkedIn](link-to-linkedin)
 - **Telegram**: [Join our community](link-to-telegram)
-- **GitHub**: [CoinByte on GitHub](link-to-github)
+- **GitHub**: [CoinByte on GitHub](link-to-github)`
