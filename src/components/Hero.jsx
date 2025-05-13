@@ -36,7 +36,7 @@ const Hero = () => {
             </div>
             <div className="badge bg-green-500/20 text-green-400 flex items-center">
               <GlobeAltIcon className="h-5 w-5 mr-1.5" />
-              Live in 20+ African Countries
+              Live in 20+ Countries
             </div>
           </div>
 
