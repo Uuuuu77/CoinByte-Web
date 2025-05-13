@@ -12,7 +12,7 @@ import {
 const Hero = () => {
   const handleAPIDocs = () => {
     trackEvent('api_docs_clicked')
-    window.open('#https://drive.google.com/file/d/1EJDfNyhU4L8-bLlrqG-EzFfINnjpvGjH/view?usp=sharing', '_blank')
+    window.open('https://drive.google.com/file/d/1EJDfNyhU4L8-bLlrqG-EzFfINnjpvGjH/view?usp=sharing', '_blank')
   }
 
   const handleAfricaFocus = () => {
