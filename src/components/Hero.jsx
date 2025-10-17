@@ -143,26 +143,70 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <motion.div 
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-6 card cursor-pointer"
-            onClick={handleAfricaFocus}
-          >
-            <div className="flex items-center gap-4">
-              <div className="bg-primary-orange/10 p-3 rounded-lg flex-shrink-0">
-                <BoltIcon className="h-6 w-6 text-primary-orange" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <motion.div 
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              className="card cursor-pointer"
+              onClick={handleAfricaFocus}
+            >
+              <div className="flex items-center gap-3">
+                <div className="bg-primary-orange/10 p-2 rounded-lg flex-shrink-0">
+                  <BoltIcon className="h-5 w-5 text-primary-orange" />
+                </div>
+                <div className="text-left">
+                  <h4 className="text-sm font-semibold text-white mb-1">
+                    Lagos → Nairobi
+                  </h4>
+                  <p className="text-gray-400 text-xs">
+                    $1 USDC in 15s →
+                  </p>
+                </div>
               </div>
-              <div className="text-left">
-                <h3 className="text-base font-semibold text-white mb-1">
-                  Instant Cross-Border Demo
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  Send $1 USDC from Lagos to Nairobi in 15s →
-                </p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              className="card cursor-pointer"
+              onClick={handleAfricaFocus}
+            >
+              <div className="flex items-center gap-3">
+                <div className="bg-primary-gold/10 p-2 rounded-lg flex-shrink-0">
+                  <BoltIcon className="h-5 w-5 text-primary-gold" />
+                </div>
+                <div className="text-left">
+                  <h4 className="text-sm font-semibold text-white mb-1">
+                    São Paulo → Manila
+                  </h4>
+                  <p className="text-gray-400 text-xs">
+                    $5 USDC in 22s →
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              className="card cursor-pointer"
+              onClick={handleAfricaFocus}
+            >
+              <div className="flex items-center gap-3">
+                <div className="bg-blue-500/10 p-2 rounded-lg flex-shrink-0">
+                  <BoltIcon className="h-5 w-5 text-blue-400" />
+                </div>
+                <div className="text-left">
+                  <h4 className="text-sm font-semibold text-white mb-1">
+                    London → Mumbai
+                  </h4>
+                  <p className="text-gray-400 text-xs">
+                    $10 USDC in 18s →
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
