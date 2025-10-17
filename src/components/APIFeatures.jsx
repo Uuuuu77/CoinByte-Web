@@ -11,32 +11,25 @@ import {
 const APIFeatures = () => {
   const apiFeatures = [
     {
-      title: "REST API",
-      description: "Simple HTTP endpoints for stablecoin transactions and wallet management",
+      title: "REST API & SDK",
+      description: "Simple HTTP endpoints and JavaScript/TypeScript SDK for seamless stablecoin integration",
       icon: <CommandLineIcon className="w-8 h-8" />,
       gradient: "from-primary-orange to-primary-gold",
       delay: 0.1
     },
     {
       title: "CLI Tools",
-      description: "Command-line interface for testing and managing stablecoin operations",
-      icon: <ShieldCheckIcon className="w-8 h-8" />,
-      gradient: "from-green-400 to-primary-gold",
+      description: "Command-line interface for testing, managing operations, and rapid prototyping",
+      icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
+      gradient: "from-blue-400 to-primary-gold",
       delay: 0.2
     },
     {
-      title: "SDK Library",
-      description: "JavaScript/TypeScript SDK for easy integration into web applications",
-      icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
-      gradient: "from-blue-400 to-primary-gold",
-      delay: 0.3
-    },
-    {
-      title: "Documentation",
-      description: "Comprehensive guides, API reference, and code examples for developers",
+      title: "Comprehensive Documentation",
+      description: "Complete guides, API reference, code examples, and interactive tutorials for developers",
       icon: <CpuChipIcon className="w-8 h-8" />,
       gradient: "from-purple-400 to-primary-orange",
-      delay: 0.4
+      delay: 0.3
     }
   ]
 

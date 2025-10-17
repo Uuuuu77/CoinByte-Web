@@ -11,32 +11,25 @@ import {
 const Features = () => {
   const features = [
     {
-      title: "Stablecoin Infrastructure",
-      description: "Multi-chain support for USDC, USDT, and emerging market stablecoins with low-fee transfers",
+      title: "Multi-Chain Stablecoin Infrastructure",
+      description: "Support for USDC, USDT across Ethereum, Polygon & Solana with low-fee, fast transfers",
       icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
       delay: 0.1,
       gradient: "from-primary-orange to-primary-gold"
     },
     {
-      title: "Developer Tools",
-      description: "CLI, APIs, and SDK for building stablecoin payment systems with comprehensive documentation",
-      icon: <CommandLineIcon className="w-8 h-8" />,
-      delay: 0.2,
-      gradient: "from-blue-400 to-primary-gold"
-    },
-    {
       title: "Global Payment Corridors",
-      description: "Cross-border stablecoin transfers with transparent fees and fast settlement times",
+      description: "Cross-border stablecoin transfers with transparent fees and 12-22 second settlement times",
       icon: <GlobeAltIcon className="w-8 h-8" />,
-      delay: 0.3,
+      delay: 0.2,
       gradient: "from-green-400 to-primary-gold"
     },
     {
-      title: "Compliance Framework",
-      description: "Built for regulatory compliance with emerging market requirements and audit trails",
+      title: "Compliance & Developer Tools",
+      description: "CLI, APIs, SDK with regulatory compliance framework and comprehensive documentation",
       icon: <ShieldCheckIcon className="w-8 h-8" />,
-      delay: 0.4,
-      gradient: "from-purple-400 to-primary-orange"
+      delay: 0.3,
+      gradient: "from-blue-400 to-purple-400"
     }
   ]
 
