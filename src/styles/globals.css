@@ -32,8 +32,9 @@
 @layer components {
   .button-primary {
     @apply px-6 py-3 rounded-lg font-semibold bg-primary-orange text-white 
-           hover:bg-primary-black transition-all duration-300;
+           hover:bg-primary-black transition-all duration-300 cursor-pointer;
     box-shadow: 0 0 15px transparent;
+    pointer-events: auto;
     
     &:hover {
       box-shadow: 0 0 15px theme('colors.primary.orange');
@@ -43,7 +44,8 @@
   .button-secondary {
     @apply px-6 py-3 rounded-lg font-semibold border-2 border-primary-gold 
            text-primary-gold hover:bg-primary-gold hover:text-primary-black 
-           transition-all duration-300;
+           transition-all duration-300 cursor-pointer;
+    pointer-events: auto;
   }
 
   .card {

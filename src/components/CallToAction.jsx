@@ -42,10 +42,12 @@ const CallToAction = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
             <motion.a
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="https://coinbyte-cli.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="button-primary group flex items-center justify-center gap-2"
+              className="button-primary group flex items-center justify-center gap-2 no-underline"
+              style={{ pointerEvents: 'auto', cursor: 'pointer' }}
             >
               <CommandLineIcon className="w-5 h-5" />
               Try CLI Tools
@@ -54,10 +56,12 @@ const CallToAction = () => {
 
             <motion.a
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="https://coinbyte-byt.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="button-secondary group flex items-center justify-center gap-2"
+              className="button-secondary group flex items-center justify-center gap-2 no-underline"
+              style={{ pointerEvents: 'auto', cursor: 'pointer' }}
             >
               <BuildingLibraryIcon className="w-5 h-5" />
               Read Documentation
@@ -68,10 +72,12 @@ const CallToAction = () => {
           <div className="flex justify-center mb-8">
             <motion.a
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href="https://wt.ls/waitlist"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-primary-gold bg-primary-gold/10 border border-primary-gold/30 rounded-lg hover:bg-primary-gold/20 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-primary-gold bg-primary-gold/10 border border-primary-gold/30 rounded-lg hover:bg-primary-gold/20 transition-all cursor-pointer no-underline"
+              style={{ pointerEvents: 'auto', cursor: 'pointer' }}
             >
               <GlobeAltIcon className="w-4 h-4" />
               Join Waitlist for Early Access
