@@ -11,46 +11,32 @@ import {
 const APIFeatures = () => {
   const apiFeatures = [
     {
-      title: "Compliance-as-Code",
-      description: "Pre-built KYC/AML flows with regional regulation templates",
-      icon: <ShieldCheckIcon className="w-8 h-8" />,
-      gradient: "from-green-400 to-primary-gold",
+      title: "REST API",
+      description: "Simple HTTP endpoints for stablecoin transactions and wallet management",
+      icon: <CommandLineIcon className="w-8 h-8" />,
+      gradient: "from-primary-orange to-primary-gold",
       delay: 0.1
     },
     {
-      title: "AI Optimization",
-      description: "Dynamic fee routing & liquidity prediction models",
-      icon: <CpuChipIcon className="w-8 h-8" />,
-      gradient: "from-purple-400 to-primary-orange",
+      title: "CLI Tools",
+      description: "Command-line interface for testing and managing stablecoin operations",
+      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      gradient: "from-green-400 to-primary-gold",
       delay: 0.2
     },
     {
-      title: "Multi-Chain SDK",
-      description: "Unified API for Ethereum, Polygon & Solana stablecoins",
+      title: "SDK Library",
+      description: "JavaScript/TypeScript SDK for easy integration into web applications",
       icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
-      gradient: "from-primary-orange to-primary-gold",
+      gradient: "from-blue-400 to-primary-gold",
       delay: 0.3
     },
     {
-      title: "Web3 Integrations",
-      description: "Plug-and-play modules for DeFi & NFT platforms",
-      icon: <BanknotesIcon className="w-8 h-8" />,
-      gradient: "from-yellow-400 to-primary-orange",
+      title: "Documentation",
+      description: "Comprehensive guides, API reference, and code examples for developers",
+      icon: <CpuChipIcon className="w-8 h-8" />,
+      gradient: "from-purple-400 to-primary-orange",
       delay: 0.4
-    },
-    {
-      title: "African Corridors",
-      description: "Pre-configured NGN/KES/GHS payment routes",
-      icon: <GlobeAltIcon className="w-8 h-8" />,
-      gradient: "from-blue-400 to-primary-gold",
-      delay: 0.5
-    },
-    {
-      title: "Enterprise Modules",
-      description: "Shopify, WooCommerce & payroll system integrations",
-      icon: <CommandLineIcon className="w-8 h-8" />,
-      gradient: "from-primary-gold to-primary-orange",
-      delay: 0.6
     }
   ]
 
@@ -64,10 +50,10 @@ const APIFeatures = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Enterprise API Ecosystem
+            Developer Experience
           </h2>
           <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
-            Developer tools bridging traditional finance and decentralized networks
+            Everything you need to build and test stablecoin payment applications
           </p>
         </motion.div>
 
@@ -92,17 +78,9 @@ const APIFeatures = () => {
                 <h3 className="text-2xl font-semibold text-gray-100 mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-secondary-light/90 leading-relaxed mb-4">
+                <p className="text-secondary-light/90 leading-relaxed">
                   {feature.description}
                 </p>
-                <div className="mt-auto">
-                  <button 
-                    className="text-primary-orange text-sm font-medium hover:underline"
-                    onClick={() => window.open('https://docs.coinbyte.com', '_blank')}
-                  >
-                    Explore Feature →
-                  </button>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -132,16 +110,16 @@ const APIFeatures = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="button-primary"
-                onClick={() => window.open('https://docs.coinbyte.com', '_blank')}
+                onClick={() => window.open('https://coinbyte-byt.vercel.app/', '_blank')}
               >
-                Full API Documentation
+                Read Documentation
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="button-secondary"
-                onClick={() => window.open('https://wt.ls/waitlist', '_blank')}
+                onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
               >
-                Get Early Access
+                Try CLI Tools
               </motion.button>
             </div>
           </div>

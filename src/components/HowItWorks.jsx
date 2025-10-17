@@ -10,23 +10,23 @@ import {
 
 const steps = [
   {
-    title: "Integrate API",
-    description: "Embed our compliant SDK into your platform",
-    subtext: "Pre-built Shopify/WooCommerce modules",
+    title: "Explore Tools",
+    description: "Start with our CLI to test stablecoin operations",
+    subtext: "Command-line interface & API testing",
     icon: <CommandLineIcon className="w-8 h-8" />,
     gradient: "from-primary-orange to-primary-gold"
   },
   {
-    title: "Configure Compliance",
-    description: "Set regional KYC/AML rules with AI guardrails",
-    subtext: "SumSub/Onfido integrations",
-    icon: <ShieldCheckIcon className="w-8 h-8" />,
+    title: "Integrate SDK",
+    description: "Use our JavaScript SDK for web applications",
+    subtext: "REST API & documentation",
+    icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
     gradient: "from-blue-400 to-primary-gold"
   },
   {
-    title: "Launch Payments",
-    description: "Enable stablecoin payins & fiat conversions",
-    subtext: "50+ African mobile money networks",
+    title: "Deploy Live",
+    description: "Go live with multi-chain stablecoin payments",
+    subtext: "Polygon, Ethereum & Solana support",
     icon: <GlobeAltIcon className="w-8 h-8" />,
     gradient: "from-primary-gold to-primary-orange"
   }
@@ -43,10 +43,10 @@ const HowItWorks = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Hybrid Payment Infrastructure
+            How It Works
           </h2>
           <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
-            Enterprise APIs + decentralized rails in three steps
+            Get started with stablecoin payments in three simple steps
           </p>
         </motion.div>
 
@@ -104,25 +104,27 @@ const HowItWorks = () => {
               <span className="text-sm text-primary-orange">For Developers</span>
             </div>
             <h3 className="text-2xl font-semibold text-gray-100 mb-4">
-              Build on Decentralized Rails
+              Ready to Start Building?
             </h3>
             <p className="text-secondary-light/90 mb-6">
-              Access our permissionless Layer 2 network for micropayments
+              Access our developer tools and start testing stablecoin infrastructure today
             </p>
             <div className="flex justify-center gap-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="button-secondary text-sm px-6 py-3"
+                onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
               >
-                <ArrowsRightLeftIcon className="w-5 h-5 mr-2" />
-                Cross-Chain SDK
+                <CommandLineIcon className="w-5 h-5 mr-2" />
+                Try CLI Tools
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="button-primary text-sm px-6 py-3"
+                onClick={() => window.open('https://coinbyte-byt.vercel.app/', '_blank')}
               >
-                <CpuChipIcon className="w-5 h-5 mr-2" />
-                AI Oracles
+                <SparklesIcon className="w-5 h-5 mr-2" />
+                Read Docs
               </motion.button>
             </div>
           </div>

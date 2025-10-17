@@ -11,35 +11,35 @@ import {
 const BusinessAPI = () => {
   const apiBenefits = [
     {
-      title: "Compliance Engine",
-      description: "Auto-generated audit trails & KYC/AML workflows",
-      subtext: "GDPR, MiCA & CBN compliant",
-      icon: <ShieldCheckIcon className="w-8 h-8" />,
-      gradient: "from-green-400 to-primary-gold",
+      title: "Low-Cost Transfers",
+      description: "Stablecoin transactions with transparent, low fees across multiple chains",
+      subtext: "Polygon, Ethereum, Solana",
+      icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
+      gradient: "from-primary-orange to-primary-gold",
       delay: 0.1
     },
     {
-      title: "AI Optimization",
-      description: "Dynamic fee routing & liquidity management",
-      subtext: "Fraud detection ML models",
+      title: "Fast Settlement",
+      description: "Near-instant settlement for cross-border stablecoin payments",
+      subtext: "12-22 second average settlement",
       icon: <CpuChipIcon className="w-8 h-8" />,
       gradient: "from-purple-400 to-primary-orange",
       delay: 0.2
     },
     {
-      title: "African Corridors",
-      description: "NGN/KES/GHS payment routes with mobile money",
-      subtext: "M-Pesa, Flutterwave, Airtel Money",
+      title: "Global Reach",
+      description: "Payment corridors connecting major emerging markets worldwide",
+      subtext: "Africa, Asia, Latin America focus",
       icon: <GlobeAltIcon className="w-8 h-8" />,
       gradient: "from-blue-400 to-primary-gold",
       delay: 0.3
     },
     {
-      title: "DeFi Bridge",
-      description: "Convert between fiat & stablecoins automatically",
-      subtext: "USDC, cUSD, naira stablecoins",
-      icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
-      gradient: "from-primary-orange to-primary-gold",
+      title: "Compliance Ready",
+      description: "Built with regulatory compliance in mind for global deployment",
+      subtext: "Transaction monitoring & reporting",
+      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      gradient: "from-green-400 to-primary-gold",
       delay: 0.4
     }
   ]
@@ -54,10 +54,10 @@ const BusinessAPI = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Hybrid Financial Infrastructure
+            Why Choose CoinByte
           </h2>
           <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
-            Enterprise APIs with decentralized settlement rails
+            Simple, reliable stablecoin infrastructure for modern businesses
           </p>
         </motion.div>
 
@@ -108,25 +108,25 @@ const BusinessAPI = () => {
             </div>
             <div className="flex-grow">
               <h3 className="text-2xl font-semibold text-gray-100 mb-4">
-                Enterprise-Grade Solutions
+                Ready to Get Started?
               </h3>
               <p className="text-secondary-light/90 mb-6">
-                Custom implementations for financial institutions and marketplaces
+                Join the waitlist to access our stablecoin infrastructure and developer tools
               </p>
               <div className="flex flex-wrap gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   className="button-primary"
-                  onClick={() => window.open('coinbyte002@gmail.com', '_blank')}
+                  onClick={() => window.open('https://wt.ls/waitlist', '_blank')}
                 >
-                  Contact Enterprise Sales
+                  Join Waitlist
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   className="button-secondary"
-                  onClick={() => window.open('#decentralized', '_blank')}
+                  onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
                 >
-                  Explore Decentralized Rails
+                  Try CLI Tools
                 </motion.button>
               </div>
             </div>

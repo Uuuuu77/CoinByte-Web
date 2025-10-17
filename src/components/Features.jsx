@@ -11,46 +11,32 @@ import {
 const Features = () => {
   const features = [
     {
-      title: "Compliance Tools",
-      description: "Embedded KYC/AML & auto-generated audit trails",
-      icon: <ShieldCheckIcon className="w-8 h-8" />,
-      delay: 0.1,
-      gradient: "from-green-400 to-primary-gold"
-    },
-    {
-      title: "AI Optimization",
-      description: "Dynamic fee optimization & fraud detection",
-      icon: <CpuChipIcon className="w-8 h-8" />,
-      delay: 0.2,
-      gradient: "from-purple-400 to-primary-orange"
-    },
-    {
-      title: "Cross-Border Rails",
-      description: "Africa-focused payment corridors with mobile money integration",
-      icon: <GlobeAltIcon className="w-8 h-8" />,
-      delay: 0.3,
-      gradient: "from-blue-400 to-primary-gold"
-    },
-    {
-      title: "Multi-Chain Support",
-      description: "Ethereum, Polygon & Solana stablecoin interoperability",
+      title: "Stablecoin Infrastructure",
+      description: "Multi-chain support for USDC, USDT, and emerging market stablecoins with low-fee transfers",
       icon: <ArrowsRightLeftIcon className="w-8 h-8" />,
-      delay: 0.4,
+      delay: 0.1,
       gradient: "from-primary-orange to-primary-gold"
     },
     {
-      title: "DeFi Integrations",
-      description: "Yield earning & decentralized lending protocols",
-      icon: <BanknotesIcon className="w-8 h-8" />,
-      delay: 0.5,
-      gradient: "from-yellow-400 to-primary-orange"
+      title: "Developer Tools",
+      description: "CLI, APIs, and SDK for building stablecoin payment systems with comprehensive documentation",
+      icon: <CommandLineIcon className="w-8 h-8" />,
+      delay: 0.2,
+      gradient: "from-blue-400 to-primary-gold"
     },
     {
-      title: "Enterprise APIs",
-      description: "Pre-built Shopify, WooCommerce & payroll integrations",
-      icon: <CommandLineIcon className="w-8 h-8" />,
-      delay: 0.6,
-      gradient: "from-primary-gold to-primary-orange"
+      title: "Global Payment Corridors",
+      description: "Cross-border stablecoin transfers with transparent fees and fast settlement times",
+      icon: <GlobeAltIcon className="w-8 h-8" />,
+      delay: 0.3,
+      gradient: "from-green-400 to-primary-gold"
+    },
+    {
+      title: "Compliance Framework",
+      description: "Built for regulatory compliance with emerging market requirements and audit trails",
+      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      delay: 0.4,
+      gradient: "from-purple-400 to-primary-orange"
     }
   ]
 
@@ -64,10 +50,10 @@ const Features = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Hybrid Financial Infrastructure
+            Core Infrastructure
           </h2>
           <p className="text-xl text-secondary-light/90 max-w-3xl mx-auto">
-            Bridging enterprise compliance with decentralized innovation
+            Essential stablecoin infrastructure for global businesses and developers
           </p>
         </motion.div>
 
