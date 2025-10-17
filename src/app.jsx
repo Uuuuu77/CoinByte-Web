@@ -16,6 +16,7 @@ const lazyWithRetry = (componentImport) =>
 // Lazy-loaded components
 const Header = lazyWithRetry(() => import('./components/Header'));
 const Hero = lazyWithRetry(() => import('./components/Hero'));
+const DeveloperTools = lazyWithRetry(() => import('./components/DeveloperTools'));
 const Features = lazyWithRetry(() => import('./components/Features'));
 const HowItWorks = lazyWithRetry(() => import('./components/HowItWorks'));
 const APIFeatures = lazyWithRetry(() => import('./components/APIFeatures'));
@@ -37,6 +38,7 @@ export default function App() {
         <main className="flex-grow">
           <Suspense fallback={<Loader />}>
             <Hero />
+            <DeveloperTools />
             <Features />
             <HowItWorks />
             <APIFeatures />

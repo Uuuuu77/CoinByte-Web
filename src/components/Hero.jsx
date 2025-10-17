@@ -41,12 +41,11 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-orange to-primary-gold text-transparent bg-clip-text">
-            Enterprise APIs Meet<br className="hidden md:block" /> Decentralized Finance
+            Build Global Stablecoin<br className="hidden md:block" /> Payment Systems in Minutes
           </h1>
           
           <p className="text-xl md:text-2xl text-secondary-light/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Build compliant crypto payment systems while empowering underbanked users
-            with decentralized rails across emerging markets
+            Enterprise APIs + Decentralized Rails. Start with our CLI, scale with AI-powered compliance across Africa, Asia, and Latin America.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
@@ -54,20 +53,31 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="button-primary text-lg px-8 py-4 flex items-center justify-center gap-2"
-              onClick={() => window.open('https://wt.ls/waitlist', '_blank')}
+              onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
             >
               <BoltIcon className="h-5 w-5" />
-              Start Building →
+              Start Building with CLI →
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="button-secondary text-lg px-8 py-4 flex items-center justify-center gap-2"
-              onClick={handleAPIDocs}
+              onClick={() => window.open('https://v0-byte-e2.vercel.app/', '_blank')}
             >
-              <ChartBarIcon className="h-5 w-5" />
-              Developer Docs
+              <SparklesIcon className="h-5 w-5" />
+              Explore Byte AI Research
             </motion.button>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-primary-gold bg-primary-gold/10 border border-primary-gold/30 rounded-lg hover:bg-primary-gold/20 transition-all"
+              href="https://identity-forge-wallet.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ShieldCheckIcon className="h-4 w-4" />
+              DID Wallet (Beta)
+            </motion.a>
           </div>
 
           <div className="flex items-center justify-center gap-6 mb-12 opacity-80 hover:opacity-100 transition-opacity">

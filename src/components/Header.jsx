@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -16,6 +17,13 @@ const Header = () => {
     { name: 'Developers', href: '#api-features' },
     { name: 'Business', href: '#business-api' },
     { name: 'Pricing', href: '#pricing' }
+  ]
+
+  const developerToolsItems = [
+    { name: 'CoinByte CLI', url: 'https://coinbyte-cli.vercel.app/' },
+    { name: 'Byte AI Assistant', url: 'https://v0-byte-e2.vercel.app/' },
+    { name: 'DID Wallet (Beta)', url: 'https://identity-forge-wallet.vercel.app/' },
+    { name: 'API Documentation', url: 'https://coinbyte-byt.vercel.app/' }
   ]
 
   const handleCTAClick = () => {
@@ -48,6 +56,46 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
+            
+            {/* Developer Tools Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+                className="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-primary-orange transition-colors text-sm font-medium"
+              >
+                Developer Tools
+                <ChevronDownIcon className="w-4 h-4" />
+              </button>
+              
+              <AnimatePresence>
+                {dropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                    className="absolute top-full right-0 mt-2 w-64 bg-primary-black/95 backdrop-blur-xl border border-gray-800 rounded-lg shadow-xl z-50"
+                  >
+                    <div className="p-2">
+                      {developerToolsItems.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-3 text-gray-300 hover:text-primary-orange hover:bg-gray-800/20 rounded-lg transition-colors text-sm"
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -90,6 +138,24 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
+              
+              {/* Mobile Developer Tools */}
+              <div className="px-4 py-2">
+                <div className="text-sm font-medium text-primary-orange mb-2">Developer Tools</div>
+                {developerToolsItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-2 py-2 text-gray-300 hover:bg-gray-800/20 rounded text-sm"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              
               <button
                 onClick={() => {
                   handleCTAClick()
