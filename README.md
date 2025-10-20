@@ -38,9 +38,6 @@ CoinByte is constantly evolving. Here’s a glimpse of what’s to come:
 - **Mobile App Launch**: A fully functional mobile version for managing your CoinByte account on the go.
 
 ## Join Us
-Be part of the future of decentralized finance. Follow us on social media and stay updated on the latest news and updates from CoinByte.
+Be part of the future of decentralized finance. Follow us on Github and stay updated on the latest news and updates from CoinByte.
 
-- **Twitter**: [@CoinByte](https://x.com/_CoinByte)
-- **LinkedIn**: [CoinByte LinkedIn](link-to-linkedin)
-- **Telegram**: [Join our community](link-to-telegram)
-- **GitHub**: [CoinByte on GitHub](link-to-github)`
+- **GitHub**: [CoinByte on GitHub]((https://github.com/Uuuuu77/CoinByte-Web/))`
