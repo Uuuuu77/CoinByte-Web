@@ -23,7 +23,6 @@ const APIFeatures = lazyWithRetry(() => import('./components/APIFeatures'));
 const BusinessAPI = lazyWithRetry(() => import('./components/BusinessAPI'));
 const LivePrices = lazyWithRetry(() => import('./components/LivePrices'));
 const TransactionStatus = lazyWithRetry(() => import('./components/TransactionStatus'));
-const ComplianceMetrics = lazyWithRetry(() => import('./components/ComplianceMetrics'));
 const Pricing = lazyWithRetry(() => import('./components/Pricing'));
 const CallToAction = lazyWithRetry(() => import('./components/CallToAction'));
 const Footer = lazyWithRetry(() => import('./components/Footer'));
@@ -46,7 +45,6 @@ export default function App() {
             <BusinessAPI />
             <LivePrices />
             <TransactionStatus />
-            <ComplianceMetrics />
 	    <Pricing />
             <CallToAction />
           </Suspense>

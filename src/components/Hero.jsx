@@ -101,27 +101,27 @@ const Hero = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
                 { 
-                  label: 'API Throughput', 
-                  value: '5M+',
-                  metric: 'Daily Calls',
+                  label: 'Development Stage', 
+                  value: 'Testnet',
+                  metric: 'Private Beta',
                   Icon: ChartBarIcon
                 },
                 { 
-                  label: 'Market Reach', 
-                  value: '20+',
-                  metric: 'Countries',
+                  label: 'Early Testers', 
+                  value: '10+',
+                  metric: 'Developers',
                   Icon: GlobeAltIcon
                 },
                 { 
-                  label: 'Assets', 
-                  value: 'Multi-Chain',
-                  metric: 'USDC • cUSD • naira',
+                  label: 'Target Markets', 
+                  value: '20+',
+                  metric: 'Countries (Roadmap)',
                   Icon: CurrencyDollarIcon
                 },
                 { 
-                  label: 'Compliance', 
-                  value: 'Enterprise',
-                  metric: 'MiCA • GDPR',
+                  label: 'Compliance Ready', 
+                  value: 'Design Phase',
+                  metric: 'MiCA • SOC 2 • GDPR',
                   Icon: ShieldCheckIcon
                 }
               ].map(({ Icon, ...stat }, index) => (
