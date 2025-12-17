@@ -29,7 +29,7 @@ const ComplianceMetrics = () => {
     {
       label: 'Compliance Ready',
       value: 'Design Phase',
-      metric: 'MiCA • GDPR',
+      metric: 'MiCA • SOC 2 • GDPR',
       Icon: ShieldCheckIcon
     }
   ]
@@ -64,14 +64,7 @@ const ComplianceMetrics = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {metrics.map(({ Icon, ...stat }, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-4 md:p-6 text-center hover:bg-white/5 rounded-lg transition-colors"
-                >
+                <div key={index} className="p-4 md:p-6 text-center">
                   <div className="flex justify-center mb-3">
                     <Icon className="h-8 w-8 text-primary-orange p-1.5 bg-orange-500/10 rounded-lg" />
                   </div>
@@ -84,7 +77,7 @@ const ComplianceMetrics = () => {
                   <div className="text-xs text-gray-400 font-mono">
                     {stat.metric}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
