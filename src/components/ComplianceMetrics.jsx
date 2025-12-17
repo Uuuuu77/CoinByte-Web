@@ -29,7 +29,7 @@ const ComplianceMetrics = () => {
     {
       label: 'Compliance Ready',
       value: 'Design Phase',
-      metric: 'MiCA • SOC 2 • GDPR',
+      metric: 'MiCA • GDPR',
       Icon: ShieldCheckIcon
     }
   ]
