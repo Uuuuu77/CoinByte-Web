@@ -27,7 +27,7 @@ const Header = () => {
   ]
 
   const handleCTAClick = () => {
-    window.open('https://wt.ls/waitlist', '_blank')
+    window.open('https://v0-coinbyte-api.vercel.app/', '_blank')
   }
 
   return (
