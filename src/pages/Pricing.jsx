@@ -1,6 +1,36 @@
 import { useState } from 'react'
-import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import PageTransition from '../components/PageTransition'
 import usePageMeta from '../hooks/usePageMeta'
-const tiers=[{name:'Free',price:{monthly:0,annual:0},cta:'Start Building',ctaUrl:'https://coinbyte-cli.vercel.app/',ctaStyle:'border',features:[{text:'CLI testnet access',included:true}]},{name:'Individual',price:{monthly:19,annual:15},cta:'Join Waitlist',ctaUrl:'https://wt.ls/waitlist',ctaStyle:'border',features:[{text:'Everything in Free',included:true}]},{name:'Business',price:{monthly:99,annual:79},cta:'Join Waitlist',ctaUrl:'https://wt.ls/waitlist',ctaStyle:'primary',features:[{text:'Everything in Individual',included:true}]},{name:'Enterprise',price:{monthly:null,annual:null},cta:'Contact Sales',ctaUrl:'mailto:coinbyte002@gmail.com',ctaStyle:'border',features:[{text:'Everything in Business',included:true}]}]
-export default function PricingPage(){usePageMeta({title:'Pricing',description:'CoinByte pricing'});const [annual,setAnnual]=useState(false);return <PageTransition><div className='container mx-auto max-w-6xl px-4 pt-16 pb-16'><h1 className='text-4xl font-bold mb-8'>Simple, honest pricing</h1><div className='inline-flex p-1 rounded-xl card-glass mb-8'><button onClick={()=>setAnnual(false)} className={!annual?'bg-primary-orange text-white px-4 py-2 rounded':'px-4 py-2'}>Monthly</button><button onClick={()=>setAnnual(true)} className={annual?'bg-primary-orange text-white px-4 py-2 rounded':'px-4 py-2'}>Annual</button></div><div className='grid md:grid-cols-2 xl:grid-cols-4 gap-5'>{tiers.map(t=><div key={t.name} className='card-glass p-6'><h3 className='text-xl font-bold'>{t.name}</h3><p className='text-3xl font-bold my-4'>{t.price.monthly===null?'Custom':`$${annual?t.price.annual:t.price.monthly}`}</p><ul className='mb-6'>{t.features.map(f=><li key={f.text} className='flex items-center gap-2'>{f.included?<CheckIcon className='w-4 h-4 text-green-400'/>:<XMarkIcon className='w-4 h-4'/>}{f.text}</li>)}</ul><a href={t.ctaUrl} className={t.ctaStyle==='primary'?'button-primary w-full justify-center':'button-secondary w-full justify-center'}>{t.cta}</a></div>)}</div></div></PageTransition>}
+
+const TIERS = [
+  { name: 'Free', monthly: 0, annual: 0, cta: 'Start Building Free', url: 'https://coinbyte-cli.vercel.app/', highlight: false },
+  { name: 'Individual', monthly: 19, annual: 15, cta: 'Join Waitlist', url: 'https://wt.ls/waitlist', highlight: false },
+  { name: 'Business', monthly: 99, annual: 79, cta: 'Join Waitlist', url: 'https://wt.ls/waitlist', highlight: true },
+  { name: 'Enterprise', monthly: null, annual: null, cta: 'Contact Sales', url: 'mailto:coinbyte002@gmail.com', highlight: false }
+]
+
+export default function PricingPage() {
+  usePageMeta({ title: 'Pricing', description: 'Simple pricing.' })
+  const [annual, setAnnual] = useState(false)
+
+  return (
+    <PageTransition>
+      <div className="container" style={{ paddingTop: 100, paddingBottom: 80 }}>
+        <h1 className="headline text-center">Simple, honest pricing</h1>
+        <div className="flex justify-center gap-2 my-6">
+          <button className="btn-secondary" onClick={() => setAnnual(false)}>Monthly</button>
+          <button className="btn-secondary" onClick={() => setAnnual(true)}>Annual</button>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+          {TIERS.map((tier) => (
+            <div key={tier.name} className="card" style={{ padding: 24, borderColor: tier.highlight ? '#FF6A00' : 'var(--border)' }}>
+              <h3 style={{ fontWeight: 700 }}>{tier.name}</h3>
+              <p style={{ fontSize: 36, fontWeight: 800, color: tier.highlight ? '#FF6A00' : 'var(--text)' }}>{tier.monthly === null ? 'Custom' : `$${annual ? tier.annual : tier.monthly}`}</p>
+              <a href={tier.url} target={tier.url.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer" className={tier.highlight ? 'btn-primary' : 'btn-secondary'}>{tier.cta}</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </PageTransition>
+  )
+}
