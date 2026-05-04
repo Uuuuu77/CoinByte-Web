@@ -30,4 +30,11 @@ html.light { --bg:#F8F7F4; --bg-raised:#EFEFEB; --bg-card:rgba(255,255,255,0.9);
 .btn-primary{background:#FF6A00;color:#fff}.btn-primary:hover{background:#E85F00;box-shadow:0 0 0 3px rgba(255,106,0,.25)}
 .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
 .button-primary{@apply btn-primary}.button-secondary{@apply btn-secondary}
+
+/* Legacy compatibility classes for not-yet-migrated routes */
+.page-hero{@apply section;}
+.card-glass{@apply card;}
+.text-h1{@apply display;}
+.code-snippet{display:block;background:var(--bg-raised);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:.95rem;line-height:1.5;overflow:auto}
 }
+
