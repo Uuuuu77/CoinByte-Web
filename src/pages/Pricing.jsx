@@ -1,0 +1,1 @@
+import Pricing from '../components/Pricing';import PageTransition from '../components/PageTransition';import usePageMeta from '../hooks/usePageMeta';export default function PricingPage(){usePageMeta({title:'Pricing',description:'CoinByte pricing.'});return <PageTransition><section className='page-hero container'><Pricing/></section></PageTransition>}
