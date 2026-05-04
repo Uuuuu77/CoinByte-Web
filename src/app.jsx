@@ -9,5 +9,5 @@ import Terms from './pages/Terms'
 import NotFound from './pages/NotFound'
 
 export default function App() {
-  return <BrowserRouter><Routes><Route element={<MainLayout />}><Route path='/' element={<Home />} /><Route path='/developers' element={<Developers />} /><Route path='/ecosystem' element={<Ecosystem />} /><Route path='/pricing' element={<Pricing />} /><Route path='/privacy' element={<Privacy />} /><Route path='/terms' element={<Terms />} /></Route><Route path='*' element={<NotFound />} /></Routes></BrowserRouter>
+  return <BrowserRouter basename={import.meta.env.BASE_URL}><Routes><Route element={<MainLayout />}><Route path='/' element={<Home />} /><Route path='/developers' element={<Developers />} /><Route path='/ecosystem' element={<Ecosystem />} /><Route path='/pricing' element={<Pricing />} /><Route path='/privacy' element={<Privacy />} /><Route path='/terms' element={<Terms />} /></Route><Route path='*' element={<NotFound />} /></Routes></BrowserRouter>
 }
