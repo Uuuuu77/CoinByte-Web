@@ -1,0 +1,5 @@
+import { motion } from 'framer-motion'
+import PageTransition from '../components/PageTransition'
+import usePageMeta from '../hooks/usePageMeta'
+const stats=[{value:'Testnet',label:'Current Stage',sub:'Private Beta'},{value:'6',label:'Developer Tools',sub:'CLI • AI • Wallet • More'},{value:'v1.5',label:'Whitepaper',sub:'Open Protocol'},{value:'2026',label:'Mainnet Target',sub:'12–18 Month Roadmap'}]
+export default function Home(){usePageMeta({title:'Home',description:'CoinByte pre-launch protocol and developer ecosystem.'});return <PageTransition><section className='page-hero text-center'><h1 className='text-h1 md:text-display gradient-text'>Build Stablecoin Infrastructure Honestly</h1><p className='text-body-lg max-w-3xl mx-auto mt-4'>Pre-MVP, testnet-first tooling for developers.</p></section><section className='section container grid md:grid-cols-4 gap-4'>{stats.map(s=><div key={s.label} className='card-glass p-5'><p className='text-2xl text-primary-orange font-bold'>{s.value}</p><p>{s.label}</p><p className='text-xs text-gray-400'>{s.sub}</p></div>)}</section></PageTransition>}
