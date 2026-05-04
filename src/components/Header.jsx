@@ -22,5 +22,17 @@ export default function Header() {
       </div>
       <button className='md:hidden' onClick={() => sO(!o)}>{o ? <XMarkIcon className='w-6' /> : <Bars3Icon className='w-6' />}</button>
     </nav>
+    {o && <div className='md:hidden border-t border-[var(--border-color)] bg-[var(--bg-secondary)]/95 backdrop-blur'>
+      <div className='container py-4 flex flex-col gap-3'>
+        {nav.map(i => <Link key={i.to} to={i.to} className={l.pathname === i.to ? 'text-primary-orange' : 'text-[var(--text-muted)]'}>{i.name}</Link>)}
+        <div className='pt-2 border-t border-[var(--border-color)] flex flex-col gap-2'>
+          {['https://coinbyte-cli.vercel.app/','https://v0-byte-e2.vercel.app/','https://identity-forge-wallet.vercel.app/','https://algobyte.vercel.app','https://byte-explorer.vercel.app/','https://claw-cast.vercel.app/'].map((u,idx)=><a key={u} href={u} target='_blank' rel='noreferrer' className='block text-sm text-[var(--text-muted)] hover:text-white'>Tool {idx+1}</a>)}
+        </div>
+        <div className='pt-2 flex items-center gap-3'>
+          <button onClick={toggle} className='p-2 rounded-lg border border-gray-700 hover:border-primary-orange transition-colors'>{theme === 'dark' ? <SunIcon className='w-4 h-4 text-gray-300' /> : <MoonIcon className='w-4 h-4 text-gray-700' />}</button>
+          <a className='button-primary' href='https://v0-coinbyte-api.vercel.app/' target='_blank' rel='noreferrer'>Get Early Access →</a>
+        </div>
+      </div>
+    </div>}
   </header>
 }
