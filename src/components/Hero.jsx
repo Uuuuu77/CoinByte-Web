@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { trackEvent } from '../utils/actions'
-import { 
+import {
   SparklesIcon,
   GlobeAltIcon,
   ChartBarIcon,
@@ -21,9 +21,14 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative pt-24 pb-16 px-4 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-br from-primary-black via-[#1a0f00] to-primary-black">
+    <section
+      className="relative pt-24 pb-16 px-4 md:pt-32 md:pb-24 overflow-hidden"
+      style={{
+        background: 'radial-gradient(1200px 500px at 50% -100px, rgba(255,106,0,0.18), transparent 70%), linear-gradient(160deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 82%, #2a1605 18%) 40%, var(--bg) 100%)'
+      }}
+    >
       <div className="container mx-auto text-center relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -34,7 +39,7 @@ const Hero = () => {
               <SparklesIcon className="h-5 w-5 mr-1.5" />
               AI-Powered Payments
             </div>
-            <div className="badge bg-green-500/20 text-green-400 flex items-center">
+            <div className="badge bg-green-500/20 text-green-500 dark:text-green-400 flex items-center">
               <GlobeAltIcon className="h-5 w-5 mr-1.5" />
               Live in 20+ Countries
             </div>
@@ -43,8 +48,8 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-orange to-primary-gold text-transparent bg-clip-text">
             Build Global Stablecoin<br className="hidden md:block" /> Payment Systems in Minutes
           </h1>
-          
-          <p className="text-xl md:text-2xl text-secondary-light/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--text-muted)' }}>
             Enterprise APIs + Decentralized Rails. Start with our CLI, scale with AI-powered compliance across Africa, Asia, and Latin America.
           </p>
 
@@ -87,39 +92,39 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="mt-16 relative w-full max-w-4xl mx-auto"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary-orange/10 to-primary-gold/5 blur-3xl" />
-          
-          <motion.div 
+
+          <motion.div
             whileHover={{ scale: 1.02 }}
             className="card group"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
-                { 
-                  label: 'Development Stage', 
+                {
+                  label: 'Development Stage',
                   value: 'Testnet',
                   metric: 'Private Beta',
                   Icon: ChartBarIcon
                 },
-                { 
-                  label: 'Early Testers', 
+                {
+                  label: 'Early Testers',
                   value: '10+',
                   metric: 'Developers',
                   Icon: GlobeAltIcon
                 },
-                { 
-                  label: 'Target Markets', 
+                {
+                  label: 'Target Markets',
                   value: '20+',
                   metric: 'Countries (Roadmap)',
                   Icon: CurrencyDollarIcon
                 },
-                { 
-                  label: 'Compliance Ready', 
+                {
+                  label: 'Compliance Ready',
                   value: 'Design Phase',
                   metric: 'MiCA • SOC 2 • GDPR',
                   Icon: ShieldCheckIcon
@@ -132,10 +137,10 @@ const Hero = () => {
                   <div className="text-2xl font-bold text-primary-orange mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm font-medium text-secondary-light mb-1">
+                  <div className="text-sm font-medium mb-1" style={{ color: 'var(--text)' }}>
                     {stat.label}
                   </div>
-                  <div className="text-xs text-gray-400 font-mono">
+                  <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
                     {stat.metric}
                   </div>
                 </div>
@@ -144,68 +149,33 @@ const Hero = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <motion.div 
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.98 }}
-              className="card cursor-pointer"
-              onClick={handleAfricaFocus}
-            >
-              <div className="flex items-center gap-3">
-                <div className="bg-primary-orange/10 p-2 rounded-lg flex-shrink-0">
-                  <BoltIcon className="h-5 w-5 text-primary-orange" />
+            {[
+              { route: 'Lagos → Nairobi', fee: '$1 USDC in 15s →', tone: 'bg-primary-orange/10 text-primary-orange' },
+              { route: 'São Paulo → Manila', fee: '$5 USDC in 22s →', tone: 'bg-primary-gold/10 text-primary-gold' },
+              { route: 'London → Mumbai', fee: '$10 USDC in 18s →', tone: 'bg-blue-500/10 text-blue-500 dark:text-blue-400' }
+            ].map((item) => (
+              <motion.div
+                key={item.route}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                className="card cursor-pointer"
+                onClick={handleAfricaFocus}
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`p-2 rounded-lg flex-shrink-0 ${item.tone}`}>
+                    <BoltIcon className="h-5 w-5" />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-sm font-semibold mb-1" style={{ color: 'var(--text)' }}>
+                      {item.route}
+                    </h4>
+                    <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                      {item.fee}
+                    </p>
+                  </div>
                 </div>
-                <div className="text-left">
-                  <h4 className="text-sm font-semibold text-white mb-1">
-                    Lagos → Nairobi
-                  </h4>
-                  <p className="text-gray-400 text-xs">
-                    $1 USDC in 15s →
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.98 }}
-              className="card cursor-pointer"
-              onClick={handleAfricaFocus}
-            >
-              <div className="flex items-center gap-3">
-                <div className="bg-primary-gold/10 p-2 rounded-lg flex-shrink-0">
-                  <BoltIcon className="h-5 w-5 text-primary-gold" />
-                </div>
-                <div className="text-left">
-                  <h4 className="text-sm font-semibold text-white mb-1">
-                    São Paulo → Manila
-                  </h4>
-                  <p className="text-gray-400 text-xs">
-                    $5 USDC in 22s →
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.98 }}
-              className="card cursor-pointer"
-              onClick={handleAfricaFocus}
-            >
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-500/10 p-2 rounded-lg flex-shrink-0">
-                  <BoltIcon className="h-5 w-5 text-blue-400" />
-                </div>
-                <div className="text-left">
-                  <h4 className="text-sm font-semibold text-white mb-1">
-                    London → Mumbai
-                  </h4>
-                  <p className="text-gray-400 text-xs">
-                    $10 USDC in 18s →
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
