@@ -39,7 +39,7 @@ const Hero = () => {
               <SparklesIcon className="h-5 w-5 mr-1.5" />
               AI-Powered Payments
             </div>
-            <div className="badge bg-green-500/20 text-green-500 dark:text-green-400 flex items-center">
+            <div className="badge bg-green-500/20 text-green-400 flex items-center">
               <GlobeAltIcon className="h-5 w-5 mr-1.5" />
               Live in 20+ Countries
             </div>
@@ -49,7 +49,7 @@ const Hero = () => {
             Build Global Stablecoin<br className="hidden md:block" /> Payment Systems in Minutes
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          <p className="mx-auto mb-8 max-w-3xl text-xl leading-relaxed text-[#9CA3AF] md:text-2xl">
             Enterprise APIs + Decentralized Rails. Start with our CLI, scale with AI-powered compliance across Africa, Asia, and Latin America.
           </p>
 
@@ -137,10 +137,10 @@ const Hero = () => {
                   <div className="text-2xl font-bold text-primary-orange mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm font-medium mb-1" style={{ color: 'var(--text)' }}>
+                  <div className="mb-1 text-sm font-medium text-[#F2F2F2]">
                     {stat.label}
                   </div>
-                  <div className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
+                  <div className="font-mono text-xs text-[#4B5563]">
                     {stat.metric}
                   </div>
                 </div>
@@ -152,7 +152,7 @@ const Hero = () => {
             {[
               { route: 'Lagos → Nairobi', fee: '$1 USDC in 15s →', tone: 'bg-primary-orange/10 text-primary-orange' },
               { route: 'São Paulo → Manila', fee: '$5 USDC in 22s →', tone: 'bg-primary-gold/10 text-primary-gold' },
-              { route: 'London → Mumbai', fee: '$10 USDC in 18s →', tone: 'bg-blue-500/10 text-blue-500 dark:text-blue-400' }
+              { route: 'London → Mumbai', fee: '$10 USDC in 18s →', tone: 'bg-blue-500/10 text-blue-400' }
             ].map((item) => (
               <motion.div
                 key={item.route}
@@ -166,10 +166,10 @@ const Hero = () => {
                     <BoltIcon className="h-5 w-5" />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-sm font-semibold mb-1" style={{ color: 'var(--text)' }}>
+                    <h4 className="mb-1 text-sm font-semibold text-[#F2F2F2]">
                       {item.route}
                     </h4>
-                    <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                    <p className="text-xs text-[#9CA3AF]">
                       {item.fee}
                     </p>
                   </div>
