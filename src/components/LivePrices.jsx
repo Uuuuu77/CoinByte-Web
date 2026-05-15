@@ -1,6 +1,7 @@
 // LivePrices.jsx
 import { useState, useEffect } from 'react'
-import { ArrowPathIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
 import { fetchCryptoData, formatCryptoData } from '../utils/api'
 
 const paymentCorridors = [
@@ -59,24 +60,30 @@ const LivePrices = () => {
     : prices
 
   return (
-    <section id="prices" className="py-24 bg-gradient-to-b from-primary-black to-primary-950">
+    <section id="prices" className="py-20" style={{ background: '#111' }}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent mb-4">
-            Live Global Markets
+        <div className="text-center mb-12">
+          <span className="tag tag-orange mb-4">LIVE MARKETS</span>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white mb-3"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            Real-time stablecoin data.
           </h2>
-          <p className="text-xl text-secondary-light max-w-2xl mx-auto mb-8">
-            Real-time cryptocurrency prices and stablecoin payment corridors across emerging markets
+          <p className="text-base max-w-xl mx-auto mb-8" style={{ color: '#9CA3AF' }}>
+            Live prices and cross-border payment corridors across emerging markets.
           </p>
           
           {/* Stablecoin Toggle */}
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <span className="text-secondary-light text-sm">All Coins</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center' }}>
+            <span className="text-sm" style={{ color: '#4B5563' }}>All Coins</span>
             <button
               onClick={() => setShowStablecoinsOnly(!showStablecoinsOnly)}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                showStablecoinsOnly ? 'bg-primary-orange' : 'bg-gray-600'
-              }`}
+              className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors"
+              style={{
+                background: showStablecoinsOnly ? '#FF6A00' : '#2A2A2A',
+                border: showStablecoinsOnly ? '1px solid #FF6A00' : '1px solid rgba(255,255,255,0.1)'
+              }}
             >
               <span
                 className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
@@ -84,43 +91,56 @@ const LivePrices = () => {
                 }`}
               />
             </button>
-            <span className="text-secondary-light text-sm">Stablecoins Only</span>
+            <span
+              className="text-sm"
+              style={{ color: showStablecoinsOnly ? '#F2F2F2' : '#4B5563' }}
+            >
+              Stablecoins Only
+            </span>
           </div>
         </div>
 
         {/* Payment Corridors Section */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-2">
-              <GlobeAltIcon className="w-6 h-6 text-primary-orange" />
-              Global Payment Corridors
-            </h3>
-            <p className="text-secondary-light/80 max-w-xl mx-auto">
-              Instant cross-border stablecoin transfers with transparent fees
-            </p>
-          </div>
+        <div className="mb-16 text-center">
+          <span className="tag tag-orange mb-6">PAYMENT CORRIDORS</span>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
             {paymentCorridors.map((corridor, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="card p-6 text-center border-primary-orange/20 hover:border-primary-orange/40"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                style={{
+                  background: '#1C1C1C',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 16,
+                  padding: '20px 24px',
+                  textAlign: 'center',
+                  transition: 'border-color .2s'
+                }}
+                whileHover={{ borderColor: 'rgba(255,106,0,0.35)' }}
               >
                 <div className="text-2xl mb-3">{corridor.flag}</div>
-                <h4 className="font-semibold text-white mb-2">
+                <h4 className="font-semibold text-white text-base mb-3">
                   {corridor.from} → {corridor.to}
                 </h4>
-                <div className="space-y-1 text-sm text-secondary-light/90">
-                  <div className="flex justify-between">
-                    <span>Settlement:</span>
-                    <span className="text-green-400">{corridor.time}</span>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                    <span style={{ fontSize: 13, color: '#4B5563' }}>Settlement</span>
+                    <span style={{ fontSize: 13, color: '#4ADE80', fontWeight: 600 }}>
+                      {corridor.time}
+                    </span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Fee:</span>
-                    <span className="text-primary-orange">{corridor.fee}</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 13, color: '#4B5563' }}>Fee</span>
+                    <span style={{ fontSize: 13, color: '#FF6A00', fontWeight: 600 }}>
+                      {corridor.fee}
+                    </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -128,7 +148,7 @@ const LivePrices = () => {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-pulse">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-20 bg-secondary-gray rounded-xl" />
+              <div key={i} className="h-20 rounded-xl" style={{ background: '#1C1C1C' }} />
             ))}
           </div>
         ) : error ? (
@@ -136,48 +156,61 @@ const LivePrices = () => {
             <p className="text-red-500">{error}</p>
             <button
               onClick={fetchPrices}
-              className="button-primary flex items-center gap-2 mx-auto"
+              className="btn-secondary flex items-center gap-2 mx-auto"
             >
               <ArrowPathIcon className="w-5 h-5" />
               Retry
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
             {filteredPrices.map((coin) => (
-              <div
+              <motion.div
                 key={coin.id}
-                className="card hover:border-primary-orange/40"
+                style={{
+                  background: '#1C1C1C',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 14,
+                  padding: '16px 20px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  transition: 'border-color .2s'
+                }}
+                whileHover={{ borderColor: 'rgba(255,106,0,0.35)' }}
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold">
-                      {coin.symbol}
-                      {coin.region === 'africa' && (
-                        <span className="ml-2 text-xs bg-primary-gold/20 text-primary-gold px-2 py-1 rounded-full">
-                          🌍 Global
-                        </span>
-                      )}
-                      {['USDC', 'USDT', 'CUSD', 'PYUSD', 'DAI'].includes(coin.symbol?.toUpperCase()) && (
-                        <span className="ml-2 text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">
-                          Stablecoin
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-sm text-secondary-light">{coin.name}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-lg font-medium">
-                      {window.formatPrice ? window.formatPrice(coin.price) : `$${coin.price?.toFixed(2) || '0.00'}`}
-                    </p>
-                    <p className={`text-sm ${coin.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {coin.change >= 0 ? '+' : ''}{coin.change?.toFixed(2) || '0.00'}%
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">
+                    {coin.symbol}
+                    {coin.region === 'africa' && (
+                      <span className="ml-2 text-xs bg-primary-gold/20 text-primary-gold px-2 py-1 rounded-full">
+                        🌍 Global
+                      </span>
+                    )}
+                    {['USDC', 'USDT', 'CUSD', 'PYUSD', 'DAI'].includes(coin.symbol?.toUpperCase()) && (
+                      <span className="tag tag-green ml-2">
+                        Stablecoin
+                      </span>
+                    )}
+                  </h3>
+                  <p className="text-xs mt-1" style={{ color: '#4B5563' }}>{coin.name}</p>
                 </div>
-              </div>
+                <div className="text-right">
+                  <p className="text-base font-semibold text-white">
+                    {window.formatPrice ? window.formatPrice(coin.price) : `$${coin.price?.toFixed(2) || '0.00'}`}
+                  </p>
+                  <p className={`text-xs ${coin.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                    {coin.change >= 0 ? '+' : ''}{coin.change?.toFixed(2) || '0.00'}%
+                  </p>
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </section>
