@@ -10,17 +10,18 @@ import {
 } from '@heroicons/react/24/outline'
 import PageTransition from '../components/PageTransition'
 import usePageMeta from '../hooks/usePageMeta'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const viewport = { once: true, margin: '-80px' }
 const fadeUp = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport }
 
 const tools = [
-  { name: 'CoinByte CLI', url: 'https://coinbyte-cli.vercel.app/', description: 'Stablecoin operations from your terminal.', status: 'Testnet', tagClass: 'tag-green', icon: CommandLineIcon },
-  { name: 'Byte AI', url: 'https://v0-byte-e2.vercel.app/', description: 'AI-native research and routing intelligence.', status: 'Preview', tagClass: 'tag-gold', icon: SparklesIcon },
-  { name: 'Identity Forge', url: 'https://identity-forge-wallet.vercel.app/', description: 'DID wallet infrastructure for secure payments.', status: 'Beta', tagClass: 'tag-orange', icon: ShieldCheckIcon },
-  { name: 'AlgoByte', url: 'https://algobyte.vercel.app', description: 'Programmable analytics for on-chain signals.', status: 'New', tagClass: 'tag-faint', icon: ChartBarIcon },
-  { name: 'Byte Explorer', url: 'https://byte-explorer.vercel.app/', description: 'A protocol explorer for transactions and rails.', status: 'New', tagClass: 'tag-faint', icon: MagnifyingGlassIcon },
-  { name: 'ClawByte', url: 'https://claw-cast.vercel.app/', description: 'Data pipeline and indexing for CoinByte apps.', status: 'New', tagClass: 'tag-faint', icon: CpuChipIcon },
+  { name: 'CoinByte CLI', url: EXTERNAL_LINKS.cli, description: 'Stablecoin operations from your terminal.', status: 'Testnet', tagClass: 'tag-green', icon: CommandLineIcon },
+  { name: 'Byte AI', url: EXTERNAL_LINKS.byteAi, description: 'AI-native research and routing intelligence.', status: 'Preview', tagClass: 'tag-gold', icon: SparklesIcon },
+  { name: 'Identity Forge', url: EXTERNAL_LINKS.identityWallet, description: 'DID wallet infrastructure for secure payments.', status: 'Beta', tagClass: 'tag-orange', icon: ShieldCheckIcon },
+  { name: 'AlgoByte', url: EXTERNAL_LINKS.algoByte, description: 'Programmable analytics for on-chain signals.', status: 'New', tagClass: 'tag-faint', icon: ChartBarIcon },
+  { name: 'Byte Explorer', url: EXTERNAL_LINKS.byteExplorer, description: 'A protocol explorer for transactions and rails.', status: 'New', tagClass: 'tag-faint', icon: MagnifyingGlassIcon },
+  { name: 'ClawByte', url: EXTERNAL_LINKS.clawByte, description: 'Data pipeline and indexing for CoinByte apps.', status: 'New', tagClass: 'tag-faint', icon: CpuChipIcon },
 ]
 
 const flow = ['YOUR APP', 'CoinByte API', 'AI Router', 'ETH | POL | SOL | BASE | CELO']
@@ -106,7 +107,7 @@ export default function Ecosystem() {
               <span className="tag tag-green">Open Source</span>
               <h2 className="mt-4 text-3xl font-black text-[#F2F2F2] md:text-4xl">All code is open-source. Fork it. Build on it. Compete with it.</h2>
             </div>
-            <a href="https://github.com/Uuuuu77/CoinByte-Web" target="_blank" rel="noreferrer" className="btn-primary">GitHub →</a>
+            <a href={EXTERNAL_LINKS.github} target="_blank" rel="noreferrer" className="btn-primary">GitHub →</a>
           </div>
         </motion.section>
       </div>

@@ -14,12 +14,12 @@ const animationDefaults = {
 function fadeInElement(element, options = {}) {
   try {
     if (!element) throw new Error('Invalid element provided for fadeIn');
-    
+
     Object.assign(element.style, {
       animation: `fade-in ${options.duration || animationDefaults.fadeInDuration} ease-out`,
       opacity: 0
     });
-    
+
     // Trigger reflow to restart animation
     void element.offsetWidth;
     element.style.opacity = '1';
@@ -31,11 +31,11 @@ function fadeInElement(element, options = {}) {
 function slideUpElement(element, options = {}) {
   try {
     if (!element) throw new Error('Invalid element provided for slideUp');
-    
+
     element.style.animation = `slide-up ${
       options.duration || animationDefaults.slideUpDuration
     } cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
-    
+
     // Force layout update
     void element.offsetHeight;
   } catch (error) {
@@ -46,7 +46,7 @@ function slideUpElement(element, options = {}) {
 function addHoverEffect(element, options = {}) {
   try {
     if (!element) throw new Error('Invalid element for hover effect');
-    
+
     element.style.transition = `transform ${options.duration || '0.2s'} ease-in-out`;
     element.addEventListener('mouseenter', () => {
       element.style.transform = `scale(${options.scale || animationDefaults.hoverScaleAmount})`;
@@ -62,7 +62,7 @@ function addHoverEffect(element, options = {}) {
 function addGlowEffect(element, options = {}) {
   try {
     if (!element) throw new Error('Invalid element for glow effect');
-    
+
     element.style.boxShadow = `0 0 ${options.intensity || animationDefaults.glowIntensity} ${
       options.color || '#FF6A00'
     }`;

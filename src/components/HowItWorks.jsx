@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { 
+import {
   CommandLineIcon,
   ShieldCheckIcon,
   ArrowsRightLeftIcon,
@@ -7,6 +7,8 @@ import {
   GlobeAltIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
+import { EXTERNAL_LINKS } from '../config/links'
+import { openExternalLink } from '../utils/actions'
 
 const steps = [
   {
@@ -36,7 +38,7 @@ const HowItWorks = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-[#0F0B07] to-primary-black">
       <div className="container mx-auto px-4 max-w-7xl">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -53,7 +55,7 @@ const HowItWorks = () => {
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Timeline connector */}
           <div className="hidden md:block absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-primary-orange/20 via-primary-gold/20 to-primary-orange/20" />
-          
+
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -64,7 +66,7 @@ const HowItWorks = () => {
               className="card group relative overflow-hidden"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
-              
+
               <div className="relative p-8 h-full flex flex-col items-center text-center">
                 {/* Step indicator */}
                 <div className="mb-6 w-16 h-16 rounded-xl bg-gradient-to-r from-primary-orange/20 to-primary-gold/20 backdrop-blur-sm flex items-center justify-center">
@@ -72,7 +74,7 @@ const HowItWorks = () => {
                     {step.icon}
                   </div>
                 </div>
-                
+
                 {/* Step number */}
                 <div className="absolute top-4 right-4 text-xs font-mono text-primary-orange">
                   0{index + 1}
@@ -113,7 +115,7 @@ const HowItWorks = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="button-secondary text-sm px-6 py-3"
-                onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
+                onClick={() => openExternalLink(EXTERNAL_LINKS.cli, 'cli_clicked')}
               >
                 <CommandLineIcon className="w-5 h-5 mr-2" />
                 Try CLI Tools
@@ -121,7 +123,7 @@ const HowItWorks = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="button-primary text-sm px-6 py-3"
-                onClick={() => window.open('https://coinbyte-byt.vercel.app/', '_blank')}
+                onClick={() => openExternalLink(EXTERNAL_LINKS.whitepaper, 'whitepaper_clicked')}
               >
                 <SparklesIcon className="w-5 h-5 mr-2" />
                 Read Docs

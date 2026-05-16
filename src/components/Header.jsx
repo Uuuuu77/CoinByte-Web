@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const NAV = [
   { label: 'Developers', to: '/developers' },
@@ -46,7 +47,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href="https://v0-coinbyte-api.vercel.app/" target="_blank" rel="noreferrer" className="btn-primary hidden md:inline-flex">
+          <a href={EXTERNAL_LINKS.coinbyteApi} target="_blank" rel="noreferrer" className="btn-primary hidden md:inline-flex">
             Get Early Access →
           </a>
           <button
@@ -79,7 +80,7 @@ export default function Header() {
                   {n.label}
                 </Link>
               ))}
-              <a href="https://v0-coinbyte-api.vercel.app/" target="_blank" rel="noreferrer" className="btn-primary mt-2 w-full">
+              <a href={EXTERNAL_LINKS.coinbyteApi} target="_blank" rel="noreferrer" className="btn-primary mt-2 w-full">
                 Get Early Access →
               </a>
             </div>

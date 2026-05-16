@@ -1,13 +1,32 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Loader } from './components/Loader'
 import MainLayout from './layouts/MainLayout'
-import Home from './pages/Home'
-import Developers from './pages/Developers'
-import Ecosystem from './pages/Ecosystem'
-import Pricing from './pages/Pricing'
-import Privacy from './pages/Privacy'
-import Terms from './pages/Terms'
-import NotFound from './pages/NotFound'
+
+const Home = lazy(() => import('./pages/Home'))
+const Developers = lazy(() => import('./pages/Developers'))
+const Ecosystem = lazy(() => import('./pages/Ecosystem'))
+const Pricing = lazy(() => import('./pages/Pricing'))
+const Privacy = lazy(() => import('./pages/Privacy'))
+const Terms = lazy(() => import('./pages/Terms'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
-  return <BrowserRouter><Routes><Route element={<MainLayout />}><Route path='/' element={<Home />} /><Route path='/developers' element={<Developers />} /><Route path='/ecosystem' element={<Ecosystem />} /><Route path='/pricing' element={<Pricing />} /><Route path='/privacy' element={<Privacy />} /><Route path='/terms' element={<Terms />} /></Route><Route path='*' element={<NotFound />} /></Routes></BrowserRouter>
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<Loader label="Loading CoinByte page" />}>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/developers" element={<Developers />} />
+            <Route path="/ecosystem" element={<Ecosystem />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  )
 }

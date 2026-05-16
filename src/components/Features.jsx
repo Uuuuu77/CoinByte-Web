@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { 
+import {
   ShieldCheckIcon,
   CpuChipIcon,
   GlobeAltIcon,
@@ -61,7 +61,7 @@ const Features = () => {
               className="card group relative overflow-hidden"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
-              
+
               <div className="relative p-8 h-full">
                 <div className="mb-6 flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-primary-orange/20 to-primary-gold/20 backdrop-blur-sm">
                   <div className="text-primary-orange">

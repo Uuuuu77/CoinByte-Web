@@ -8,7 +8,9 @@
     "preview": "vite preview --port 4173 --host",
     "lint": "eslint .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test": "node --test tests/*.test.mjs",
+    "format:check": "node scripts/check-format.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

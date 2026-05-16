@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion'
-import { 
+import {
   ArrowRightIcon,
   CommandLineIcon,
   GlobeAltIcon,
   ShieldCheckIcon,
   BuildingLibraryIcon
 } from '@heroicons/react/24/outline'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const CallToAction = () => {
   return (
     <section id="cta" className="relative overflow-hidden py-24 bg-gradient-to-br from-primary-black to-[#0F0B07]">
       <div className="absolute inset-0 opacity-5 bg-[url('/grid-dark.svg')]" />
-      
+
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +35,7 @@ const CallToAction = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-orange to-primary-gold bg-clip-text text-transparent">
             Ready to Start Building?
           </h2>
-          
+
           <p className="text-xl text-secondary-light/90 mb-8 max-w-3xl mx-auto">
             Join developers worldwide who are building the next generation of stablecoin payment infrastructure
           </p>
@@ -43,7 +44,7 @@ const CallToAction = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://coinbyte-cli.vercel.app/"
+              href={EXTERNAL_LINKS.cli}
               target="_blank"
               rel="noopener noreferrer"
               className="button-primary group flex items-center justify-center gap-2 no-underline"
@@ -57,7 +58,7 @@ const CallToAction = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://coinbyte-byt.vercel.app/"
+              href={EXTERNAL_LINKS.whitepaper}
               target="_blank"
               rel="noopener noreferrer"
               className="button-secondary group flex items-center justify-center gap-2 no-underline"
@@ -73,7 +74,7 @@ const CallToAction = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://wt.ls/waitlist"
+              href={EXTERNAL_LINKS.waitlist}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-primary-gold bg-primary-gold/10 border border-primary-gold/30 rounded-lg hover:bg-primary-gold/20 transition-all cursor-pointer no-underline"
@@ -98,9 +99,9 @@ const CallToAction = () => {
             <div className="bg-primary-black/50 p-4 rounded-lg border border-gray-800">
               <div className="flex items-center justify-between mb-2">
                 <code className="font-mono text-xs text-green-400">$ coinbyte --help</code>
-                <a 
-                  href="https://coinbyte-cli.vercel.app/" 
-                  target="_blank" 
+                <a
+                  href={EXTERNAL_LINKS.cli}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-primary-orange hover:underline"
                 >

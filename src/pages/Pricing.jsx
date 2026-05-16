@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import PageTransition from '../components/PageTransition'
 import usePageMeta from '../hooks/usePageMeta'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const viewport = { once: true, margin: '-80px' }
 const fadeUp = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport }
@@ -15,7 +16,7 @@ const TIERS = [
     tag: 'Start Today',
     tagClass: 'tag-green',
     cta: 'Start Building Free',
-    url: 'https://coinbyte-cli.vercel.app/',
+    url: EXTERNAL_LINKS.cli,
     features: ['CLI testnet access', '1,000 API calls/month', 'Community support', 'Basic documentation'],
   },
   {
@@ -25,7 +26,7 @@ const TIERS = [
     tag: 'Early Access',
     tagClass: 'tag-gold',
     cta: 'Join Waitlist',
-    url: 'https://wt.ls/waitlist',
+    url: EXTERNAL_LINKS.waitlist,
     features: ['10,000 API calls/month', '3 chains included', 'Email support', 'SDK access'],
   },
   {
@@ -35,7 +36,7 @@ const TIERS = [
     tag: 'Most Popular',
     tagClass: 'tag-orange',
     cta: 'Join Waitlist',
-    url: 'https://wt.ls/waitlist',
+    url: EXTERNAL_LINKS.waitlist,
     highlighted: true,
     features: ['Unlimited API calls', 'All 5 chains', 'Priority support', 'Custom webhooks', 'Compliance dashboard', 'SLA guarantee'],
   },
