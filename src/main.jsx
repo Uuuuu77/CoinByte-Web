@@ -4,9 +4,12 @@ import { createRoot } from 'react-dom/client'
 import App from './app'
 import './styles/animations.css'  // Animation styles
 import './styles/globals.css'     // Global styles
+import { registerGlobalActions } from './utils/actions'
 
 // Optional error monitoring initialization
 // import * as Sentry from '@sentry/react'
+
+registerGlobalActions()
 
 const root = createRoot(document.getElementById('root'))
 

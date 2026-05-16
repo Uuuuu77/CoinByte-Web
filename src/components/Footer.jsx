@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const ecosystemLinks = [
-  { name: 'CoinByte CLI', url: 'https://coinbyte-cli.vercel.app/', badge: 'Testnet' },
-  { name: 'Byte AI', url: 'https://v0-byte-e2.vercel.app/', badge: 'Preview' },
-  { name: 'Identity Forge Wallet', url: 'https://identity-forge-wallet.vercel.app/', badge: 'Beta' },
-  { name: 'AlgoByte', url: 'https://algobyte.vercel.app', badge: 'New' },
-  { name: 'Byte Explorer', url: 'https://byte-explorer.vercel.app/', badge: 'New' },
-  { name: 'ClawByte', url: 'https://claw-cast.vercel.app/', badge: 'New' },
+  { name: 'CoinByte CLI', url: EXTERNAL_LINKS.cli, badge: 'Testnet' },
+  { name: 'Byte AI', url: EXTERNAL_LINKS.byteAi, badge: 'Preview' },
+  { name: 'Identity Forge Wallet', url: EXTERNAL_LINKS.identityWallet, badge: 'Beta' },
+  { name: 'AlgoByte', url: EXTERNAL_LINKS.algoByte, badge: 'New' },
+  { name: 'Byte Explorer', url: EXTERNAL_LINKS.byteExplorer, badge: 'New' },
+  { name: 'ClawByte', url: EXTERNAL_LINKS.clawByte, badge: 'New' },
 ]
 
 export default function Footer() {

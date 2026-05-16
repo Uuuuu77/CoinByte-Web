@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { trackEvent } from '../utils/actions'
+import { openExternalLink, trackEvent } from '../utils/actions'
 import {
   SparklesIcon,
   GlobeAltIcon,
@@ -8,13 +8,9 @@ import {
   ShieldCheckIcon,
   BoltIcon
 } from '@heroicons/react/24/outline'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const Hero = () => {
-  const handleAPIDocs = () => {
-    trackEvent('api_docs_clicked')
-    window.open('https://drive.google.com/file/d/1EJDfNyhU4L8-bLlrqG-EzFfINnjpvGjH/view?usp=sharing', '_blank')
-  }
-
   const handleAfricaFocus = () => {
     trackEvent('africa_cta_clicked')
     document.getElementById('africa')?.scrollIntoView({ behavior: 'smooth' })
@@ -58,7 +54,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="button-primary text-lg px-8 py-4 flex items-center justify-center gap-2"
-              onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
+              onClick={() => openExternalLink(EXTERNAL_LINKS.cli, 'cli_clicked')}
             >
               <BoltIcon className="h-5 w-5" />
               Start Building with CLI →
@@ -67,7 +63,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="button-secondary text-lg px-8 py-4 flex items-center justify-center gap-2"
-              onClick={() => window.open('https://v0-byte-e2.vercel.app/', '_blank')}
+              onClick={() => openExternalLink(EXTERNAL_LINKS.byteAi, 'byte_ai_clicked')}
             >
               <SparklesIcon className="h-5 w-5" />
               Explore Byte AI Research
@@ -76,7 +72,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-primary-gold bg-primary-gold/10 border border-primary-gold/30 rounded-lg hover:bg-primary-gold/20 transition-all"
-              href="https://identity-forge-wallet.vercel.app/"
+              href={EXTERNAL_LINKS.identityWallet}
               target="_blank"
               rel="noopener noreferrer"
             >

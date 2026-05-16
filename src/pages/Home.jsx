@@ -12,6 +12,7 @@ import {
 } from '@heroicons/react/24/outline'
 import PageTransition from '../components/PageTransition'
 import usePageMeta from '../hooks/usePageMeta'
+import { EXTERNAL_LINKS } from '../config/links'
 
 const corridors = [
   { from: 'Lagos', to: 'Nairobi', time: '15s', rail: 'USDC', cost: '$0.42' },
@@ -59,10 +60,10 @@ export default function Home() {
               CoinByte is stablecoin infrastructure for teams shipping borderless payouts, developer-first wallets, and compliance-aware transfer flows across fragmented markets.
             </p>
             <div className="hero-actions">
-              <a href="https://coinbyte-cli.vercel.app/" target="_blank" rel="noreferrer" className="btn-primary btn-command">
+              <a href={EXTERNAL_LINKS.cli} target="_blank" rel="noreferrer" className="btn-primary btn-command">
                 <CommandLineIcon className="w-4 h-4" /> Start with CLI <ArrowRightIcon className="w-4 h-4" />
               </a>
-              <a href="https://coinbyte-byt.vercel.app/" target="_blank" rel="noreferrer" className="btn-secondary">
+              <a href={EXTERNAL_LINKS.whitepaper} target="_blank" rel="noreferrer" className="btn-secondary">
                 Read Whitepaper v1.5
               </a>
             </div>

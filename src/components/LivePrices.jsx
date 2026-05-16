@@ -2,27 +2,27 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowPathIcon } from '@heroicons/react/24/outline'
-import { fetchCryptoData, formatCryptoData } from '../utils/api'
+import { fetchCryptoData, formatCryptoData, formatPrice } from '../utils/api'
 
 const paymentCorridors = [
-  { 
-    from: 'San Francisco', 
-    to: 'Nairobi', 
-    time: '12 seconds', 
+  {
+    from: 'San Francisco',
+    to: 'Nairobi',
+    time: '12 seconds',
     fee: '$0.05',
     flag: '🇺🇸 → 🇰🇪'
   },
-  { 
-    from: 'London', 
-    to: 'Mumbai', 
-    time: '18 seconds', 
+  {
+    from: 'London',
+    to: 'Mumbai',
+    time: '18 seconds',
     fee: '$0.07',
     flag: '🇬🇧 → 🇮🇳'
   },
-  { 
-    from: 'São Paulo', 
-    to: 'Manila', 
-    time: '22 seconds', 
+  {
+    from: 'São Paulo',
+    to: 'Manila',
+    time: '22 seconds',
     fee: '$0.09',
     flag: '🇧🇷 → 🇵🇭'
   }
@@ -34,13 +34,14 @@ const LivePrices = () => {
   const [error, setError] = useState(null)
   const [showStablecoinsOnly, setShowStablecoinsOnly] = useState(true)
 
-  const fetchPrices = async () => {
+  const fetchPrices = async (signal) => {
     try {
       setLoading(true)
-      const data = await fetchCryptoData()
+      const data = await fetchCryptoData({ signal })
       setPrices(formatCryptoData(data))
       setError(null)
     } catch (err) {
+      if (err.code === 'REQUEST_ABORTED') return
       setError('Failed to fetch prices. Please try again.')
     } finally {
       setLoading(false)
@@ -48,9 +49,14 @@ const LivePrices = () => {
   }
 
   useEffect(() => {
-    fetchPrices()
-    const interval = setInterval(fetchPrices, 30000)
-    return () => clearInterval(interval)
+    const controller = new AbortController()
+    fetchPrices(controller.signal)
+    const interval = setInterval(() => fetchPrices(controller.signal), 30000)
+
+    return () => {
+      controller.abort()
+      clearInterval(interval)
+    }
   }, [])
 
   const filteredPrices = showStablecoinsOnly
@@ -71,11 +77,14 @@ const LivePrices = () => {
           <p className="text-base max-w-xl mx-auto mb-8" style={{ color: '#9CA3AF' }}>
             Live prices and cross-border payment corridors across emerging markets.
           </p>
-          
+
           {/* Stablecoin Toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center' }}>
             <span className="text-sm" style={{ color: '#4B5563' }}>All Coins</span>
             <button
+              type="button"
+              aria-label="Toggle stablecoins only"
+              aria-pressed={showStablecoinsOnly}
               onClick={() => setShowStablecoinsOnly(!showStablecoinsOnly)}
               className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors"
               style={{
@@ -101,7 +110,7 @@ const LivePrices = () => {
         {/* Payment Corridors Section */}
         <div className="mb-16 text-center">
           <span className="tag tag-orange mb-6">PAYMENT CORRIDORS</span>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
             {paymentCorridors.map((corridor, index) => (
               <motion.div
@@ -151,9 +160,10 @@ const LivePrices = () => {
           </div>
         ) : error ? (
           <div className="text-center py-8 space-y-4">
-            <p className="text-red-500">{error}</p>
+            <p className="text-red-500" role="alert">{error}</p>
             <button
-              onClick={fetchPrices}
+              type="button"
+              onClick={() => fetchPrices()}
               className="btn-secondary flex items-center gap-2 mx-auto"
             >
               <ArrowPathIcon className="w-5 h-5" />
@@ -195,7 +205,7 @@ const LivePrices = () => {
                 </div>
                 <div className="text-right">
                   <p className="text-base font-semibold text-white">
-                    {window.formatPrice ? window.formatPrice(coin.price) : `$${coin.price?.toFixed(2) || '0.00'}`}
+                    {formatPrice(coin.price)}
                   </p>
                   <p className={`text-xs ${coin.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                     {coin.change >= 0 ? '+' : ''}{coin.change?.toFixed(2) || '0.00'}%

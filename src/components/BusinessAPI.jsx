@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { 
+import {
   ShieldCheckIcon,
   CpuChipIcon,
   GlobeAltIcon,
@@ -7,6 +7,8 @@ import {
   ArrowsRightLeftIcon,
   BuildingLibraryIcon
 } from '@heroicons/react/24/outline'
+import { EXTERNAL_LINKS } from '../config/links'
+import { openExternalLink } from '../utils/actions'
 
 const BusinessAPI = () => {
   const apiBenefits = [
@@ -72,7 +74,7 @@ const BusinessAPI = () => {
               className="card group relative overflow-hidden"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-10 transition-opacity`} />
-              
+
               <div className="relative p-8 h-full flex flex-col">
                 <div className="flex items-center gap-6 mb-6">
                   <div className="flex-shrink-0 p-4 rounded-xl bg-gradient-to-r from-primary-orange/20 to-primary-gold/20 backdrop-blur-sm">
@@ -117,14 +119,14 @@ const BusinessAPI = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   className="button-primary"
-                  onClick={() => window.open('https://wt.ls/waitlist', '_blank')}
+                  onClick={() => openExternalLink(EXTERNAL_LINKS.waitlist, 'waitlist_clicked')}
                 >
                   Join Waitlist
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   className="button-secondary"
-                  onClick={() => window.open('https://coinbyte-cli.vercel.app/', '_blank')}
+                  onClick={() => openExternalLink(EXTERNAL_LINKS.cli, 'cli_clicked')}
                 >
                   Try CLI Tools
                 </motion.button>
