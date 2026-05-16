@@ -10,7 +10,8 @@ const API_CONFIG = {
   baseUrl: 'https://api.coingecko.com/api/v3/simple/price',
   defaultIds: [
     'bitcoin', 'ethereum', 'solana',
-    'tether', 'usd-coin', // Stablecoins
+    'tether', 'usd-coin', 'usds', 'usd1-wlfi', 'dai',
+    'ethena-usde', 'paypal-usd', 'global-dollar', 'falcon-usd', 'ripple-usd',
     'binancecoin', 'cardano', 'ripple',
     'celo', 'stellar', 'celo-dollar' // African-focused
   ],
@@ -34,6 +35,14 @@ const CRYPTO_METADATA = {
   ethereum: { name: 'Ethereum', symbol: 'ETH', type: 'crypto', region: 'global' },
   tether: { name: 'Tether', symbol: 'USDT', type: 'stablecoin', region: 'global' },
   'usd-coin': { name: 'USD Coin', symbol: 'USDC', type: 'stablecoin', region: 'global' },
+  usds: { name: 'USDS', symbol: 'USDS', type: 'stablecoin', region: 'global' },
+  'usd1-wlfi': { name: 'World Liberty Financial USD', symbol: 'USD1', type: 'stablecoin', region: 'global' },
+  dai: { name: 'Dai', symbol: 'DAI', type: 'stablecoin', region: 'global' },
+  'ethena-usde': { name: 'Ethena USDe', symbol: 'USDe', type: 'stablecoin', region: 'global' },
+  'paypal-usd': { name: 'PayPal USD', symbol: 'PYUSD', type: 'stablecoin', region: 'global' },
+  'global-dollar': { name: 'Global Dollar', symbol: 'USDG', type: 'stablecoin', region: 'global' },
+  'falcon-usd': { name: 'Falcon USD', symbol: 'USDF', type: 'stablecoin', region: 'global' },
+  'ripple-usd': { name: 'Ripple USD', symbol: 'RLUSD', type: 'stablecoin', region: 'global' },
   solana: { name: 'Solana', symbol: 'SOL', type: 'crypto', region: 'global' },
   celo: { name: 'Celo', symbol: 'CELO', type: 'crypto', region: 'africa' },
   'celo-dollar': { name: 'cUSD', symbol: 'cUSD', type: 'stablecoin', region: 'africa' },
