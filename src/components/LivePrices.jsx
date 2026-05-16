@@ -53,10 +53,8 @@ const LivePrices = () => {
     return () => clearInterval(interval)
   }, [])
 
-  const filteredPrices = showStablecoinsOnly 
-    ? prices.filter(coin => 
-        ['USDC', 'USDT', 'CUSD', 'PYUSD', 'DAI'].includes(coin.symbol.toUpperCase())
-      )
+  const filteredPrices = showStablecoinsOnly
+    ? prices.filter(coin => coin.type === 'stablecoin')
     : prices
 
   return (
@@ -187,12 +185,7 @@ const LivePrices = () => {
                 <div>
                   <h3 className="text-lg font-bold text-white">
                     {coin.symbol}
-                    {coin.region === 'africa' && (
-                      <span className="ml-2 text-xs bg-primary-gold/20 text-primary-gold px-2 py-1 rounded-full">
-                        🌍 Global
-                      </span>
-                    )}
-                    {['USDC', 'USDT', 'CUSD', 'PYUSD', 'DAI'].includes(coin.symbol?.toUpperCase()) && (
+                    {coin.type === 'stablecoin' && (
                       <span className="tag tag-green ml-2">
                         Stablecoin
                       </span>
