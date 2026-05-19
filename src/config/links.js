@@ -1,5 +1,5 @@
 export const EXTERNAL_LINKS = Object.freeze({
-  coinbyteApi: 'https://v0-coinbyte-api.vercel.app/',
+  coinbyteApi: 'https://coinbyte-api.vercel.app/',
   waitlist: 'https://wt.ls/waitlist',
   cli: 'https://coinbyte-cli.vercel.app/',
   whitepaper: 'https://coinbyte-byt.vercel.app/',
