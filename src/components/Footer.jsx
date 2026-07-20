@@ -22,7 +22,7 @@ export default function Footer() {
             </div>
 
             <p className="max-w-xs text-sm leading-relaxed text-[#9CA3AF]">
-              CoinByte is an early-stage product currently under development.
+              Open monetary infrastructure for stable value transfer.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-[#9CA3AF] md:flex-row">
-          <p>© 2026 CoinByte • Early-stage product currently under development</p>
+          <p>© 2026 CoinByte Labs, Inc. • Pre-launch testnet phase</p>
         </div>
       </div>
     </footer>
