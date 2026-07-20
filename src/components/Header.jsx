@@ -5,11 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { EXTERNAL_LINKS } from '../config/links'
 
 const NAV = [
-  { label: 'Product', to: '/' },
   { label: 'Developers', to: '/developers' },
   { label: 'Ecosystem', to: '/ecosystem' },
   { label: 'Pricing', to: '/pricing' },
-  { label: 'Company', to: '/#company' },
 ]
 
 export default function Header() {
@@ -49,9 +47,8 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href={EXTERNAL_LINKS.whitepaper} target="_blank" rel="noreferrer" className="btn-secondary hidden md:inline-flex">Read the docs</a>
-          <a href={EXTERNAL_LINKS.coinbyteApi} target="_blank" rel="noreferrer" className="btn-primary">
-            Get early access
+          <a href={EXTERNAL_LINKS.coinbyteApi} target="_blank" rel="noreferrer" className="btn-primary hidden md:inline-flex">
+            Get Early Access →
           </a>
           <button
             type="button"
@@ -84,7 +81,7 @@ export default function Header() {
                 </Link>
               ))}
               <a href={EXTERNAL_LINKS.coinbyteApi} target="_blank" rel="noreferrer" className="btn-primary mt-2 w-full">
-                Get early access
+                Get Early Access →
               </a>
             </div>
           </motion.div>
