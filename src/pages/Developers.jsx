@@ -115,17 +115,17 @@ export default function Developers() {
               Build once.<br />Ship everywhere.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-[#9CA3AF] md:text-xl">
-              CoinByte gives you mint, send, and redeem primitives across 5 chains \u2014 wrapped in a REST API a junior dev can integrate in 15 minutes.
+              CoinByte gives you mint, send, and redeem primitives across 5 chains — wrapped in a REST API a junior dev can integrate in 15 minutes.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={EXTERNAL_LINKS.cli} target="_blank" rel="noreferrer" className="btn-primary">Start with CLI \u2192</a>
+              <a href={EXTERNAL_LINKS.cli} target="_blank" rel="noreferrer" className="btn-primary">Start with CLI →</a>
               <a href={EXTERNAL_LINKS.whitepaper} target="_blank" rel="noreferrer" className="btn-secondary">Read Whitepaper</a>
             </div>
             <div className="terminal-block mt-8 max-w-3xl">
               <div><span className="prompt">$</span> coinbyte init my-app</div>
-              <div className="output">\u2713 Wallet created on Polygon</div>
-              <div className="output">\u2713 Treasury funded (testnet)</div>
-              <div><span className="prompt">\u2192</span> Ready. Run: coinbyte mint --amount 10 --to 0x...</div>
+              <div className="output">✓ Wallet created on Polygon</div>
+              <div className="output">✓ Treasury funded (testnet)</div>
+              <div><span className="prompt">→</span> Ready. Run: coinbyte mint --amount 10 --to 0x...</div>
             </div>
           </div>
         </motion.section>
@@ -252,7 +252,7 @@ export default function Developers() {
               <h2 className="mt-4 text-3xl font-black text-[#F2F2F2] md:text-4xl">Join the testnet waitlist</h2>
               <p className="mt-2 text-[#9CA3AF]">Get API keys, integration notes, and early network updates.</p>
             </div>
-            <a href={EXTERNAL_LINKS.waitlist} target="_blank" rel="noreferrer" className="btn-primary">Join the testnet waitlist \u2192</a>
+            <a href={EXTERNAL_LINKS.waitlist} target="_blank" rel="noreferrer" className="btn-primary">Join the testnet waitlist →</a>
           </div>
         </motion.section>
       </div>

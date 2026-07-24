@@ -33,8 +33,8 @@ const TransactionStatus = () => {
   const accentColor = accentColors[status]
 
   return (
-    <>
-      <div className="text-center mb-12">
+    <div className="flex flex-col gap-10 lg:sticky lg:top-24 self-start">
+      <div className="text-center">
         <span className="tag tag-orange mb-4">TRANSACTION SIMULATOR</span>
         <h2
           className="text-4xl font-bold text-white mb-3"
@@ -43,7 +43,7 @@ const TransactionStatus = () => {
           See how payments settle.
         </h2>
         <p className="text-sm max-w-sm mx-auto" style={{ color: 'var(--text-muted)' }}>
-          Test the full payment lifecycle \u2014 pending, confirmed, and failed states.
+          Test the full payment lifecycle — pending, confirmed, and failed states.
         </p>
       </div>
 
@@ -104,7 +104,7 @@ const TransactionStatus = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
