@@ -64,8 +64,8 @@ const LivePrices = () => {
     : prices
 
   return (
-    <>
-      <div className="text-center mb-12">
+    <div className="flex flex-col gap-16">
+      <div className="text-center">
         <span className="tag tag-orange mb-4">LIVE MARKETS</span>
         <h2
           className="text-4xl md:text-5xl font-bold text-white mb-3"
@@ -107,10 +107,10 @@ const LivePrices = () => {
       </div>
 
       {/* Payment Corridors Section */}
-      <div className="mb-16 text-center">
+      <div className="text-center">
         <span className="tag tag-orange mb-6">PAYMENT CORRIDORS</span>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
           {paymentCorridors.map((corridor, index) => (
             <motion.div
               key={index}
@@ -127,7 +127,7 @@ const LivePrices = () => {
             >
               <div className="text-2xl mb-3">{corridor.flag}</div>
               <h4 className="font-semibold text-white text-base mb-3">
-                {corridor.from} \u2192 {corridor.to}
+                {corridor.from} → {corridor.to}
               </h4>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
@@ -171,7 +171,7 @@ const LivePrices = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
           {filteredPrices.map((coin) => (
             <motion.div
@@ -186,10 +186,10 @@ const LivePrices = () => {
               whileHover={{ borderColor: 'var(--border-hover)' }}
             >
               <div style={{ minWidth: 0, overflow: 'hidden' }}>
-                <h3 className="text-lg font-bold text-white" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {coin.symbol}
-                  {coin.type === 'stablecoin' && (
-                    <span className="tag tag-green ml-2">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2 min-w-0">
+                  <span className="truncate">{coin.symbol}</span>
+                  {!showStablecoinsOnly && coin.type === 'stablecoin' && (
+                    <span className="tag tag-green flex-shrink-0">
                       Stablecoin
                     </span>
                   )}
@@ -208,7 +208,7 @@ const LivePrices = () => {
           ))}
         </motion.div>
       )}
-    </>
+    </div>
   )
 }
 
