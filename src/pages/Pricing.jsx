@@ -27,7 +27,7 @@ const TIERS = [
     tagClass: 'tag-gold',
     cta: 'Join Waitlist',
     url: EXTERNAL_LINKS.waitlist,
-    features: ['10,000 API calls/month', '3 chains included', 'Email support', 'SDK access'],
+    features: ['10,000 API calls/month', '5 chains included', 'Email support', 'SDK access'],
   },
   {
     name: 'Business',
@@ -38,7 +38,7 @@ const TIERS = [
     cta: 'Join Waitlist',
     url: EXTERNAL_LINKS.waitlist,
     highlighted: true,
-    features: ['Unlimited API calls', 'All 5 chains', 'Priority support', 'Custom webhooks', 'Compliance dashboard', 'SLA guarantee'],
+    features: ['Unlimited API calls', '10 chains included', 'Priority support', 'Custom webhooks', 'Compliance dashboard', 'SLA guarantee'],
   },
   {
     name: 'Enterprise',
@@ -48,7 +48,7 @@ const TIERS = [
     tagClass: 'tag-faint',
     cta: 'Contact Sales',
     url: 'mailto:coinbyte002@gmail.com',
-    features: ['Dedicated infrastructure', 'Custom integrations', 'Priority SLAs', 'Enhanced security', 'DID Wallet integration', 'Byte AI analytics access'],
+    features: ['Dedicated infrastructure', 'All 20+ chains', 'Custom integrations', 'Priority SLAs', 'Enhanced security', 'DID Wallet integration', 'Byte AI analytics access'],
   },
 ]
 
