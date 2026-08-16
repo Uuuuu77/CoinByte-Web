@@ -3,7 +3,7 @@ export const EXTERNAL_LINKS = Object.freeze({
   waitlist: 'https://wt.ls/waitlist',
   cli: 'https://coinbyte-cli.vercel.app/',
   whitepaper: 'https://coinbyte-byt.vercel.app/',
-  byteAi: 'https://v0-byte-e2.vercel.app/',
+  byteAi: 'https://byte-e2.vercel.app/',
   identityWallet: 'https://identity-forge-wallet.vercel.app/',
   algoByte: 'https://algobyte.vercel.app',
   byteExplorer: 'https://byte-explorer.vercel.app/',
